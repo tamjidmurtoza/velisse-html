@@ -1700,7 +1700,7 @@ label {
 
 .cs_fs_20 {
   font-size: 20px;
-  line-height: 1.5em;
+  line-height: 1.35em;
 }
 
 .cs_fs_24 {
@@ -3157,6 +3157,7 @@ hr {
 .cs_hero_style_1 .cs_hero_top {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .cs_hero_style_1 .cs_hero_top .cs_hero_top_left {
   max-width: 563px;
@@ -3164,6 +3165,10 @@ hr {
 .cs_hero_style_1 .cs_hero_bottom {
   display: flex;
   justify-content: space-between;
+  gap: 30px 24px;
+}
+.cs_hero_style_1 .cs_hero_bottom_right {
+  flex: none;
 }
 
 /*--------------------------------------------------------------
@@ -3184,4 +3189,4 @@ hr {
 ----------------------------------------------------------------*/
 /*--------------------------------------------------------------
   15. Card
-----------------------------------------------------------------*/
+----------------------------------------------------------------*//*# sourceMappingURL=style.css.map */

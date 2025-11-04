@@ -10,7 +10,8 @@
   .cs_hero_top {
     display: flex;
     justify-content: space-between;
-    
+    flex-wrap: wrap;
+
     .cs_hero_top_left {
       max-width: 563px;
     }
@@ -18,7 +19,9 @@
   .cs_hero_bottom {
     display: flex;
     justify-content: space-between;
-
+    gap: 30px 24px;
+  }
+  .cs_hero_bottom_right {
+    flex: none;
   }
 }
-
