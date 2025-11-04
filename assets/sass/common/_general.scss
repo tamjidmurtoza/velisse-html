@@ -1,9 +1,70 @@
 /*--------------------------------------------------------------
   4. General
 ----------------------------------------------------------------*/
+.cs_subtitle_style_2{
+  position: relative;
+  padding-left: 12px;
+
+  &::before {content: "";
+    height: 6px;
+    width: 6px;
+    background-color: var(--heading-color);
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+}
+.cs_brand_section_style_1{
+  padding: 70px 50px;
+}
+.cs_about_section{
+  .row{
+    .col-10{
+      .cs_section_title{
+        h2{
+          line-height: 1.36em;
+          span{
+            color: var(--border-color);
+          }
+        }
+      }
+    }
+  }
+}
+.cs_funfact_style_1{
+  h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.cs_hover_img {
+  overflow: hidden;
+  display: inline-block;
+  img {
+    transition: all 0.6s ease-in-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.cs_hover_text_opacity_8 {
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+  };
+}
+
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1364px;
+  }
+  .container-fluid {
+    max-width: 1440px;
   }
 }
 .cs_fs_16 {
@@ -22,10 +83,16 @@
   font-size: 32px;
   line-height: 1.25em;
 }
+.cs_fs_48 {
+  font-size: 48px;
+}
 
 .cs_fs_80 {
   font-size: 80px;
   line-height: 1.1em;
+}
+.cs_fs_96 {
+  font-size: 96px;
 }
 
 .cs_fs_132 {

@@ -577,30 +577,6 @@ label {
   margin-bottom: 60px;
 }
 
-.cs_mb_61 {
-  margin-bottom: 61px;
-}
-
-.cs_mb_62 {
-  margin-bottom: 62px;
-}
-
-.cs_mb_63 {
-  margin-bottom: 63px;
-}
-
-.cs_mb_64 {
-  margin-bottom: 64px;
-}
-
-.cs_mb_65 {
-  margin-bottom: 65px;
-}
-
-.cs_mb_66 {
-  margin-bottom: 66px;
-}
-
 @media screen and (min-width: 992px) {
   .cs_height_1 {
     height: 1px;
@@ -1688,9 +1664,60 @@ label {
 /*--------------------------------------------------------------
   4. General
 ----------------------------------------------------------------*/
+.cs_subtitle_style_2 {
+  position: relative;
+  padding-left: 12px;
+}
+.cs_subtitle_style_2::before {
+  content: "";
+  height: 6px;
+  width: 6px;
+  background-color: var(--heading-color);
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.cs_brand_section_style_1 {
+  padding: 70px 50px;
+}
+
+.cs_about_section .row .col-10 .cs_section_title h2 {
+  line-height: 1.36em;
+}
+.cs_about_section .row .col-10 .cs_section_title h2 span {
+  color: var(--border-color);
+}
+
+.cs_funfact_style_1 h2, .cs_funfact_style_1 h3, .cs_funfact_style_1 p {
+  margin: 0;
+  padding: 0;
+}
+
+.cs_hover_img {
+  overflow: hidden;
+  display: inline-block;
+}
+.cs_hover_img img {
+  transition: all 0.6s ease-in-out;
+}
+.cs_hover_img:hover img {
+  transform: scale(1.1);
+}
+
+.cs_hover_text_opacity_8 {
+  transition: all 0.3s ease;
+}
+.cs_hover_text_opacity_8:hover {
+  opacity: 0.8;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1364px;
+  }
+  .container-fluid {
+    max-width: 1440px;
   }
 }
 .cs_fs_16 {
@@ -1713,9 +1740,17 @@ label {
   line-height: 1.25em;
 }
 
+.cs_fs_48 {
+  font-size: 48px;
+}
+
 .cs_fs_80 {
   font-size: 80px;
   line-height: 1.1em;
+}
+
+.cs_fs_96 {
+  font-size: 96px;
 }
 
 .cs_fs_132 {
@@ -2054,6 +2089,15 @@ hr {
 .cs_slider_gap_24 .slick-list {
   margin-left: -12px;
   margin-right: -12px;
+}
+
+.cs_slider_gap_104 .slick-slide {
+  padding-left: 52px;
+  padding-right: 52px;
+}
+.cs_slider_gap_104 .slick-list {
+  margin-left: -52px;
+  margin-right: -52px;
 }
 
 .cs_slider_arrows.cs_style_1 .cs_arrow_wrap_left,
@@ -3189,4 +3233,4 @@ hr {
 ----------------------------------------------------------------*/
 /*--------------------------------------------------------------
   15. Card
-----------------------------------------------------------------*//*# sourceMappingURL=style.css.map */
+----------------------------------------------------------------*/
