@@ -7,4 +7,18 @@
       color: var(--body-color);
     }
   }
+  .cs_hero_top {
+    display: flex;
+    justify-content: space-between;
+    
+    .cs_hero_top_left {
+      max-width: 563px;
+    }
+  }
+  .cs_hero_bottom {
+    display: flex;
+    justify-content: space-between;
+
+  }
 }
+

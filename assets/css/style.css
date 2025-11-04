@@ -577,6 +577,30 @@ label {
   margin-bottom: 60px;
 }
 
+.cs_mb_61 {
+  margin-bottom: 61px;
+}
+
+.cs_mb_62 {
+  margin-bottom: 62px;
+}
+
+.cs_mb_63 {
+  margin-bottom: 63px;
+}
+
+.cs_mb_64 {
+  margin-bottom: 64px;
+}
+
+.cs_mb_65 {
+  margin-bottom: 65px;
+}
+
+.cs_mb_66 {
+  margin-bottom: 66px;
+}
+
 @media screen and (min-width: 992px) {
   .cs_height_1 {
     height: 1px;
@@ -3130,6 +3154,17 @@ hr {
 .cs_hero_style_1 .cs_hero_title span {
   color: var(--body-color);
 }
+.cs_hero_style_1 .cs_hero_top {
+  display: flex;
+  justify-content: space-between;
+}
+.cs_hero_style_1 .cs_hero_top .cs_hero_top_left {
+  max-width: 563px;
+}
+.cs_hero_style_1 .cs_hero_bottom {
+  display: flex;
+  justify-content: space-between;
+}
 
 /*--------------------------------------------------------------
   11. Iconbox
@@ -3137,6 +3172,10 @@ hr {
 /*--------------------------------------------------------------
   12. CTA
 ----------------------------------------------------------------*/
+.cs_banner_style_1 {
+  min-height: 720px;
+}
+
 /*--------------------------------------------------------------
   13. Testimonial
 ----------------------------------------------------------------*/
@@ -3145,4 +3184,4 @@ hr {
 ----------------------------------------------------------------*/
 /*--------------------------------------------------------------
   15. Card
-----------------------------------------------------------------*//*# sourceMappingURL=style.css.map */
+----------------------------------------------------------------*/
