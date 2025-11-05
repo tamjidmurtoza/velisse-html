@@ -76,7 +76,7 @@ html {
   background-color: var(--white-color);
   font-family: var(--body-font);
   font-size: 20px;
-  line-height: 1.6em;
+  line-height: 1.35em;
   font-weight: 400;
   overflow-x: clip;
 }
@@ -1664,59 +1664,6 @@ label {
 /*--------------------------------------------------------------
   4. General
 ----------------------------------------------------------------*/
-.cs_subtitle_style_2 {
-  position: relative;
-  padding-left: 12px;
-}
-.cs_subtitle_style_2::before {
-  content: "";
-  height: 7px;
-  width: 7px;
-  border-radius: 50%;
-  background-color: var(--heading-color);
-  position: absolute;
-  top: 13px;
-  left: 0;
-}
-
-.cs_brand_section_style_1 {
-  padding: 70px 50px;
-}
-
-.cs_about_section .cs_section_title {
-  line-height: 1.36em;
-}
-.cs_about_section .cs_section_title span {
-  color: var(--border-color);
-}
-
-.cs_service_section .cs_section_title {
-  padding-left: 60px;
-}
-
-.cs_funfact_style_1 h2, .cs_funfact_style_1 h3, .cs_funfact_style_1 p {
-  margin: 0;
-  padding: 0;
-}
-
-.cs_hover_img {
-  overflow: hidden;
-  display: inline-block;
-}
-.cs_hover_img img {
-  transition: all 0.6s ease-in-out;
-}
-.cs_hover_img:hover img {
-  transform: scale(1.1);
-}
-
-.cs_hover_text_opacity_8 {
-  transition: all 0.3s ease;
-}
-.cs_hover_text_opacity_8:hover {
-  opacity: 0.8;
-}
-
 @media (min-width: 1400px) {
   .container {
     max-width: 1364px;
@@ -1747,6 +1694,7 @@ label {
 
 .cs_fs_48 {
   font-size: 48px;
+  line-height: 1.36em;
 }
 
 .cs_fs_80 {
@@ -1756,6 +1704,7 @@ label {
 
 .cs_fs_96 {
   font-size: 96px;
+  line-height: 1.33em;
 }
 
 .cs_fs_132 {
@@ -2055,6 +2004,55 @@ hr {
 }
 .cs_btn_style_1:hover img {
   transform: translateX(5px);
+}
+
+.cs_section_subtitle {
+  position: relative;
+  padding-left: 12px;
+}
+.cs_section_subtitle::before {
+  content: "";
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: var(--heading-color);
+  position: absolute;
+  top: 13px;
+  left: 0;
+}
+
+.cs_brand_section_style_1 .cs_brand {
+  text-align: center;
+  height: 100px;
+}
+.cs_brand_section_style_1 .slick-slide img {
+  display: inline-block;
+}
+
+.cs_insid_span_secondary_color span {
+  color: var(--body-color);
+}
+
+.cs_insid_span_border_color span {
+  color: var(--border-color);
+}
+
+.cs_hover_img {
+  overflow: hidden;
+  display: inline-block;
+}
+.cs_hover_img img {
+  transition: all 0.6s ease-in-out;
+}
+.cs_hover_img:hover img {
+  transform: scale(1.1);
+}
+
+.cs_hover_text_opacity_8 {
+  transition: all 0.3s ease;
+}
+.cs_hover_text_opacity_8:hover {
+  opacity: 0.8;
 }
 
 /*--------------------------------------------------------------
@@ -3203,9 +3201,6 @@ hr {
 /*--------------------------------------------------------------
   10. Hero
 ----------------------------------------------------------------*/
-.cs_hero_style_1 .cs_hero_title span {
-  color: var(--body-color);
-}
 .cs_hero_style_1 .cs_hero_top {
   display: flex;
   justify-content: space-between;
@@ -3241,4 +3236,4 @@ hr {
 ----------------------------------------------------------------*/
 /*--------------------------------------------------------------
   15. Card
-----------------------------------------------------------------*/
+----------------------------------------------------------------*//*# sourceMappingURL=style.css.map */
