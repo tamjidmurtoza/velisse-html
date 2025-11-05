@@ -1670,11 +1670,12 @@ label {
 }
 .cs_subtitle_style_2::before {
   content: "";
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
   background-color: var(--heading-color);
   position: absolute;
-  top: 10px;
+  top: 13px;
   left: 0;
 }
 
@@ -1682,11 +1683,15 @@ label {
   padding: 70px 50px;
 }
 
-.cs_about_section .row .col-10 .cs_section_title h2 {
+.cs_about_section .cs_section_title {
   line-height: 1.36em;
 }
-.cs_about_section .row .col-10 .cs_section_title h2 span {
+.cs_about_section .cs_section_title span {
   color: var(--border-color);
+}
+
+.cs_service_section .cs_section_title {
+  padding-left: 60px;
 }
 
 .cs_funfact_style_1 h2, .cs_funfact_style_1 h3, .cs_funfact_style_1 p {
@@ -2036,17 +2041,20 @@ hr {
 }
 
 /* End Accordion */
-.cs_btn.cs_style_1 {
+.cs_btn_style_1 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 40px;
+  gap: 16px;
+  padding: 16px 40px;
   outline: none;
-  border: none;
+  border: 1px solid currentColor;
 }
-.cs_btn.cs_style_1:hover {
-  transform: translateY(-2px);
-  border-radius: 10px;
+.cs_btn_style_1 img {
+  transition: all 0.3s ease;
+}
+.cs_btn_style_1:hover img {
+  transform: translateX(5px);
 }
 
 /*--------------------------------------------------------------
