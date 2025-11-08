@@ -47,6 +47,7 @@
     lightGallery();
     hoverActive();
     isotopInit();
+    customMousePointer();
     if ($.exists('.wow')) {
       new WOW().init();
     }
@@ -384,4 +385,86 @@
         });
     });
   }
+
+   /*--------------------------------------------------------------
+    18. Custom Mouse Pointer
+  --------------------------------------------------------------*/
+  function customMousePointer() {
+    $('.cs_custom_pointer_wrap').each(function () {
+      $(this).on('mousemove', function (e) {
+        let mouseX = e.pageX - $(this).offset().left;
+        let mouseY = e.pageY - $(this).offset().top;
+
+        $(this)
+          .find('.cs_mouse_point')
+          .css({
+            top: mouseY + 'px',
+            left: mouseX + 'px',
+          });
+      });
+    });
+  }
+
+  /*--------------------------------------------------------------
+    19. Custom Slider
+  --------------------------------------------------------------*/
+  function customSlider() {
+    var Slider = (function () {
+      var initSlider = function () {
+        $('.cs_custom_slide_arrow_right , .cs_custom_slide_arrow_left').click(
+          function (event) {
+            const direction = $(this).hasClass('cs_custom_slide_arrow_left')
+              ? 'prev'
+              : 'next';
+            updateSlides(direction);
+          },
+        );
+        updateSlides('next');
+      };
+
+      const updateSlides = function (direction) {
+        const activeSlide = $('.cs_custom_slide.active');
+        const slides = $('.cs_custom_slide');
+        const totalSlides = slides.length;
+        const activeIndex = activeSlide.index();
+        let nextIndex;
+
+        if (direction === 'next') {
+          nextIndex = activeIndex === totalSlides - 1 ? 0 : activeIndex + 1;
+        } else {
+          nextIndex = activeIndex === 0 ? totalSlides - 1 : activeIndex - 1;
+        }
+
+        const nextSlide = slides.eq(nextIndex);
+
+        // Remove active class from all slides
+        slides.removeClass('prev-1 next-1 prev-2 next-2 active');
+
+        // Set the new active slide
+        nextSlide.addClass('active');
+
+        // Calculate the indices of previous and next slides considering the loop
+        const prev1Index = nextIndex === 0 ? totalSlides - 1 : nextIndex - 1;
+        const prev2Index = prev1Index === 0 ? totalSlides - 1 : prev1Index - 1;
+        const next1Index = nextIndex === totalSlides - 1 ? 0 : nextIndex + 1;
+        const next2Index = next1Index === totalSlides - 1 ? 0 : next1Index + 1;
+
+        // Add appropriate classes to slides
+        slides.eq(prev1Index).addClass('prev-1');
+        slides.eq(prev2Index).addClass('prev-2');
+        slides.eq(next1Index).addClass('next-1');
+        slides.eq(next2Index).addClass('next-2');
+      };
+
+      return {
+        init: function () {
+          initSlider();
+        },
+      };
+    })();
+
+    Slider.init();
+  }
 })(jQuery); // End of use strict
+
+

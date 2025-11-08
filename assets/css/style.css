@@ -1677,6 +1677,11 @@ label {
   line-height: 1.5em;
 }
 
+.cs_fs_18 {
+  font-size: 18px;
+  line-height: 1.33em;
+}
+
 .cs_fs_20 {
   font-size: 20px;
   line-height: 1.35em;
@@ -1694,7 +1699,7 @@ label {
 
 .cs_fs_48 {
   font-size: 48px;
-  line-height: 1.36em;
+  line-height: 1.33em;
 }
 
 .cs_fs_80 {
@@ -1990,6 +1995,25 @@ hr {
 }
 
 /* End Accordion */
+.cs_custom_pointer_wrap {
+  position: relative;
+}
+.cs_custom_pointer_wrap .cs_mouse_point {
+  position: absolute;
+  z-index: 10;
+  width: 360px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform ease 0.4s, opacity ease 0.4s;
+  pointer-events: none;
+}
+.cs_custom_pointer_wrap:hover .cs_mouse_point {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .cs_btn_style_1 {
   display: inline-flex;
   justify-content: center;
@@ -2008,7 +2032,7 @@ hr {
 
 .cs_section_subtitle {
   position: relative;
-  padding-left: 12px;
+  padding-left: 19px;
 }
 .cs_section_subtitle::before {
   content: "";
@@ -2029,11 +2053,11 @@ hr {
   display: inline-block;
 }
 
-.cs_insid_span_secondary_color span {
+.cs_inside_span_secondary_color span {
   color: var(--body-color);
 }
 
-.cs_insid_span_border_color span {
+.cs_inside_span_border_color span {
   color: var(--border-color);
 }
 
@@ -2053,6 +2077,13 @@ hr {
 }
 .cs_hover_text_opacity_8:hover {
   opacity: 0.8;
+}
+
+.cs_flex_between {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 /*--------------------------------------------------------------
@@ -3236,4 +3267,45 @@ hr {
 ----------------------------------------------------------------*/
 /*--------------------------------------------------------------
   15. Card
-----------------------------------------------------------------*//*# sourceMappingURL=style.css.map */
+----------------------------------------------------------------*/
+.cs_service_style_1_list > li {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.cs_service_style_1_list > li:last-child {
+  border-bottom: none;
+}
+
+.service_style_1 {
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
+}
+.service_style_1 .service_right {
+  flex: none;
+  width: 100%;
+  max-width: 415px;
+}
+
+.service_highlight_list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.service_highlight_list li:not(:first-child) {
+  position: relative;
+  padding-left: 24px;
+}
+.service_highlight_list li:not(:first-child)::before {
+  content: "";
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: var(--heading-color);
+  position: absolute;
+  top: 10px;
+  left: 0;
+}

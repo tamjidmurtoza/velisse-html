@@ -1,0 +1,46 @@
+.cs_service_style_1_list {
+  > li {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+.service_style_1 {
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
+
+
+    .service_right {
+    flex: none;
+    width: 100%;
+    max-width: 415px;
+    }
+}
+
+.service_highlight_list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  li:not(:first-child) {
+    position: relative;
+    padding-left: 24px;
+    &::before {
+      content: "";
+      height: 4px;
+      width: 4px;
+      border-radius: 50%;
+      background-color: var(--heading-color);
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
+}
