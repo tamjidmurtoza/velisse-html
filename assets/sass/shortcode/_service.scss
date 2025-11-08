@@ -9,21 +9,21 @@
 }
 
 
-.service_style_1 {
+.cs_service {
   gap: 24px;
   flex-wrap: wrap;
   position: relative;
   z-index: 20;
 
 
-    .service_right {
+    .cs_service_right {
     flex: none;
     width: 100%;
     max-width: 415px;
     }
 }
 
-.service_highlight_list {
+.cs_service_highlight_list {
   display: flex;
   align-items: center;
   gap: 20px;
