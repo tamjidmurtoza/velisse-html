@@ -1,0 +1,24 @@
+.cs_project_thumb {
+  .cs_btn_style_1 {
+    position:absolute;
+    bottom: 27px;
+    right: 28px;
+    background: var(--white-color);
+    color: var(--heading-color);
+    border: 0;
+    // transform: translateY(15px);
+    // opacity: 0;
+    // visibility: hidden;
+    transform: scale(0);
+    transition: transform 1s ease;
+  }
+  &:hover {
+    .cs_btn_style_1 {
+    // transform: translateY(0);
+    // opacity: 1;
+    // visibility: visible;
+    transform: scale(1);
+    
+  }
+  }
+}

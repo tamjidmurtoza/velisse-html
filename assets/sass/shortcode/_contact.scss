@@ -1,0 +1,27 @@
+
+
+  .cs_contact_info_left {
+    >ul {
+      gap: 50px;
+    }
+    .cs_contact_info_item {
+      > h3 {
+        color: var(--border-color);
+      }
+    }
+  }
+
+
+.cs_contact_info_item > a {
+    color: var(--white-color);
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .cs_contact_info_right {
+    .cs_btn_style_1 {
+      background-color: var(--white-color);
+      color: var(--heading-color);
+    }
+  }
+

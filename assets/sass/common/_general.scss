@@ -39,6 +39,10 @@
   font-size: 80px;
   line-height: 1.1em;
 }
+.cs_fs_86 {
+  font-size: 86px;
+  line-height: 1.33em;
+}
 .cs_fs_96 {
   font-size: 96px;
   line-height: 1.33em;
@@ -238,6 +242,9 @@ hr {
 
 .cs_body_color {
   color: var(--body-color);
+}
+.cs_gray_color {
+  color: var(--gray-color);
 }
 
 .cs_white_bg {

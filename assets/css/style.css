@@ -1707,6 +1707,11 @@ label {
   line-height: 1.1em;
 }
 
+.cs_fs_86 {
+  font-size: 86px;
+  line-height: 1.33em;
+}
+
 .cs_fs_96 {
   font-size: 96px;
   line-height: 1.33em;
@@ -1908,6 +1913,10 @@ hr {
 
 .cs_body_color {
   color: var(--body-color);
+}
+
+.cs_gray_color {
+  color: var(--gray-color);
 }
 
 .cs_white_bg {
@@ -3168,4 +3177,37 @@ hr {
   position: absolute;
   top: 10px;
   left: 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.cs_project_thumb .cs_btn_style_1 {
+  position: absolute;
+  bottom: 27px;
+  right: 28px;
+  background: var(--white-color);
+  color: var(--heading-color);
+  border: 0;
+  transform: scale(0);
+  transition: transform 1s ease;
+}
+.cs_project_thumb:hover .cs_btn_style_1 {
+  transform: scale(1);
+}
+
+.cs_contact_info_left > ul {
+  gap: 50px;
+}
+.cs_contact_info_left .cs_contact_info_item > h3 {
+  color: var(--border-color);
+}
+
+.cs_contact_info_item > a {
+  color: var(--white-color);
+}
+.cs_contact_info_item > a:hover {
+  opacity: 0.8;
+}
+
+.cs_contact_info_right .cs_btn_style_1 {
+  background-color: var(--white-color);
+  color: var(--heading-color);
+}
