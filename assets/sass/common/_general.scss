@@ -191,21 +191,12 @@
   gap: 100px 0;
 }
 
-.cs_gap_x_40 {
-  margin-left: -20px;
-  margin-right: -20px;
+.cs_gap_x_72 {
+  margin-left: -36px;
+  margin-right: -36px;
   > * {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-.cs_gap_x_20 {
-  margin-left: -10px;
-  margin-right: -10px;
-  > * {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 36px;
+    padding-right: 36px;
   }
 }
 
@@ -320,11 +311,10 @@ hr {
       }
       .cs_accordian_toggle {
         &::after {
-          transform: translate(-50%,-50%) rotate(90deg) scale(0);
-    }
+          transform: translate(-50%, -50%) rotate(90deg) scale(0);
+        }
       }
     }
-
   }
   .cs_accordian_toggle {
     display: flex;
@@ -334,20 +324,20 @@ hr {
     height: 33px;
     width: 33px;
 
-    &::before , &::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background-color: var(--heading-color);
-    top: 50%;
-    left: 50%;
-    transition: all 0.3s ease;
-    transform: translate(-50%,-50%);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background-color: var(--heading-color);
+      top: 50%;
+      left: 50%;
+      transition: all 0.3s ease;
+      transform: translate(-50%, -50%);
     }
     &::after {
-    
-    transform: translate(-50%,-50%) rotate(90deg) scale(1);
+      transform: translate(-50%, -50%) rotate(90deg) scale(1);
     }
   }
 }
@@ -376,7 +366,6 @@ hr {
     }
   }
 }
-
 
 .cs_btn_style_1 {
   display: inline-flex;
@@ -452,10 +441,8 @@ hr {
   }
 }
 
-
 .cs_flex_between {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  flex-wrap: wrap;
 }

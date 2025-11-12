@@ -1,5 +1,5 @@
 (function ($) {
-  'use strict';
+  "use strict";
 
   /*
   |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@
     return $(selector).length > 0;
   };
 
-  $(window).on('load', function () {
+  $(window).on("load", function () {
     preloader();
     isotopInit();
   });
@@ -48,12 +48,12 @@
     hoverActive();
     isotopInit();
     customMousePointer();
-    if ($.exists('.wow')) {
+    if ($.exists(".wow")) {
       new WOW().init();
     }
   });
 
-  $(window).on('scroll', function () {
+  $(window).on("scroll", function () {
     stickyHeader();
   });
 
@@ -61,34 +61,34 @@
     1. Preloader
   --------------------------------------------------------------*/
   function preloader() {
-    $('.cs_preloader').fadeOut();
-    $('cs_preloader_in').delay(150).fadeOut('slow');
+    $(".cs_preloader").fadeOut();
+    $("cs_preloader_in").delay(150).fadeOut("slow");
   }
 
   /*--------------------------------------------------------------
     2. Mobile Menu
   --------------------------------------------------------------*/
   function mainNav() {
-    $('.cs_nav').append('<span class="cs_menu_toggle"><span></span></span>');
-    $('.menu-item-has-children').append(
-      '<span class="cs_munu_dropdown_toggle"><span></span></span>',
+    $(".cs_nav").append('<span class="cs_menu_toggle"><span></span></span>');
+    $(".menu-item-has-children").append(
+      '<span class="cs_munu_dropdown_toggle"><span></span></span>'
     );
-    $('.cs_menu_toggle').on('click', function () {
+    $(".cs_menu_toggle").on("click", function () {
       $(this)
-        .toggleClass('cs_toggle_active')
-        .siblings('.cs_nav_list_wrap')
-        .toggleClass('cs_active');
+        .toggleClass("cs_toggle_active")
+        .siblings(".cs_nav_list_wrap")
+        .toggleClass("cs_active");
     });
-    $('.cs_munu_dropdown_toggle').on('click', function () {
-      $(this).toggleClass('active').siblings('ul').slideToggle();
-      $(this).parent().toggleClass('active');
+    $(".cs_munu_dropdown_toggle").on("click", function () {
+      $(this).toggleClass("active").siblings("ul").slideToggle();
+      $(this).parent().toggleClass("active");
     });
     // Search Toggle
-    $('.cs_search_tobble_btn').on('click', function () {
-      $('.cs_header_form_wrap').toggleClass('active');
+    $(".cs_search_tobble_btn").on("click", function () {
+      $(".cs_header_form_wrap").toggleClass("active");
     });
-    $('.cs_header_form_overlay').on('click', function () {
-      $('.cs_header_form_wrap').removeClass('active');
+    $(".cs_header_form_overlay").on("click", function () {
+      $(".cs_header_form_wrap").removeClass("active");
     });
   }
 
@@ -98,9 +98,9 @@
   function stickyHeader() {
     var scroll = $(window).scrollTop();
     if (scroll >= 10) {
-      $('.cs_sticky_header').addClass('cs_sticky_active');
+      $(".cs_sticky_header").addClass("cs_sticky_active");
     } else {
-      $('.cs_sticky_header').removeClass('cs_sticky_active');
+      $(".cs_sticky_header").removeClass("cs_sticky_active");
     }
   }
 
@@ -108,10 +108,10 @@
     4. Dynamic Background
   --------------------------------------------------------------*/
   function dynamicBackground() {
-    $('[data-src]').each(function () {
-      var src = $(this).attr('data-src');
+    $("[data-src]").each(function () {
+      var src = $(this).attr("data-src");
       $(this).css({
-        'background-image': 'url(' + src + ')',
+        "background-image": "url(" + src + ")",
       });
     });
   }
@@ -120,14 +120,14 @@
     5. Slick Slider
   --------------------------------------------------------------*/
   function slickInit() {
-    if ($.exists('.cs_slider')) {
-      $('.cs_slider').each(function () {
+    if ($.exists(".cs_slider")) {
+      $(".cs_slider").each(function () {
         // Slick Variable
-        var $ts = $(this).find('.cs_slider_container');
-        var $slickActive = $(this).find('.cs_slider_wrapper');
-        var $status = $(this).find('.cs_slider_number');
+        var $ts = $(this).find(".cs_slider_container");
+        var $slickActive = $(this).find(".cs_slider_wrapper");
+        var $status = $(this).find(".cs_slider_number");
         // Auto Play
-        var autoPlayVar = parseInt($ts.attr('data-autoplay'), 10);
+        var autoPlayVar = parseInt($ts.attr("data-autoplay"), 10);
         // Auto Play Time Out
         var autoplaySpdVar = 3000;
         if (autoPlayVar > 1) {
@@ -135,58 +135,58 @@
           autoPlayVar = 1;
         }
         // Slide Change Speed
-        var speedVar = parseInt($ts.attr('data-speed'), 10);
+        var speedVar = parseInt($ts.attr("data-speed"), 10);
         // Slider Loop
-        var loopVar = Boolean(parseInt($ts.attr('data-loop'), 10));
+        var loopVar = Boolean(parseInt($ts.attr("data-loop"), 10));
         // Slider Center
-        var centerVar = Boolean(parseInt($ts.attr('data-center'), 10));
+        var centerVar = Boolean(parseInt($ts.attr("data-center"), 10));
         // Variable Width
         var variableWidthVar = Boolean(
-          parseInt($ts.attr('data-variable-width'), 10),
+          parseInt($ts.attr("data-variable-width"), 10)
         );
         // Pagination
         var paginaiton = $(this)
-          .find('.cs_pagination')
-          .hasClass('cs_pagination');
+          .find(".cs_pagination")
+          .hasClass("cs_pagination");
         // Slide Per View
-        var slidesPerView = $ts.attr('data-slides-per-view');
+        var slidesPerView = $ts.attr("data-slides-per-view");
         if (slidesPerView == 1) {
           slidesPerView = 1;
         }
-        if (slidesPerView == 'responsive') {
-          var slidesPerView = parseInt($ts.attr('data-add-slides'), 10);
-          var lgPoint = parseInt($ts.attr('data-lg-slides'), 10);
-          var mdPoint = parseInt($ts.attr('data-md-slides'), 10);
-          var smPoint = parseInt($ts.attr('data-sm-slides'), 10);
-          var xsPoing = parseInt($ts.attr('data-xs-slides'), 10);
+        if (slidesPerView == "responsive") {
+          var slidesPerView = parseInt($ts.attr("data-add-slides"), 10);
+          var lgPoint = parseInt($ts.attr("data-lg-slides"), 10);
+          var mdPoint = parseInt($ts.attr("data-md-slides"), 10);
+          var smPoint = parseInt($ts.attr("data-sm-slides"), 10);
+          var xsPoing = parseInt($ts.attr("data-xs-slides"), 10);
         }
         // Fade Slider
-        var fadeVar = parseInt($($ts).attr('data-fade-slide'));
+        var fadeVar = parseInt($($ts).attr("data-fade-slide"));
         fadeVar === 1 ? (fadeVar = true) : (fadeVar = false);
         /* Start Count Slide Number */
         $slickActive.on(
-          'init reInit afterChange',
+          "init reInit afterChange",
           function (event, slick, currentSlide, nextSlide) {
             var i = (currentSlide ? currentSlide : 0) + 1;
             $status.html(
-              `<span class="cs_current_number" data-number="${i}"><span>${i}</span></span> <span class="cs_slider_number_seperator"></span> <span class="cs_total_numbers"  data-number="${slick.slideCount}"><span>${slick.slideCount}</span></span>`,
+              `<span class="cs_current_number" data-number="${i}"><span>${i}</span></span> <span class="cs_slider_number_seperator">/</span> <span class="cs_total_numbers"  data-number="${slick.slideCount}"><span>${slick.slideCount}</span></span>`
             );
-          },
+          }
         );
         /* End Count Slide Number */
         // Slick Active Code
         $slickActive.slick({
           autoplay: autoPlayVar,
           dots: paginaiton,
-          centerPadding: '28%',
+          centerPadding: "28%",
           speed: speedVar,
           infinite: loopVar,
           autoplaySpeed: autoplaySpdVar,
           centerMode: centerVar,
           fade: fadeVar,
-          prevArrow: $(this).find('.cs_left_arrow'),
-          nextArrow: $(this).find('.cs_right_arrow'),
-          appendDots: $(this).find('.cs_pagination'),
+          prevArrow: $(this).find(".cs_left_arrow"),
+          nextArrow: $(this).find(".cs_right_arrow"),
+          appendDots: $(this).find(".cs_pagination"),
           slidesToShow: slidesPerView,
           variableWidth: variableWidthVar,
           swipeToSlide: true,
@@ -225,8 +225,8 @@
     6. Modal Video
   --------------------------------------------------------------*/
   function modalVideo() {
-    if ($.exists('.cs_video_open')) {
-      $('body').append(`
+    if ($.exists(".cs_video_open")) {
+      $("body").append(`
         <div class="cs_video_popup">
           <div class="cs_video_popup-overlay"></div>
           <div class="cs_video_popup-content">
@@ -242,22 +242,22 @@
           </div>
         </div>
       `);
-      $(document).on('click', '.cs_video_open', function (e) {
+      $(document).on("click", ".cs_video_open", function (e) {
         e.preventDefault();
-        var video = $(this).attr('href');
+        var video = $(this).attr("href");
 
-        $('.cs_video_popup-container iframe').attr('src', `${video}`);
+        $(".cs_video_popup-container iframe").attr("src", `${video}`);
 
-        $('.cs_video_popup').addClass('active');
+        $(".cs_video_popup").addClass("active");
       });
-      $('.cs_video_popup-close, .cs_video_popup-layer').on(
-        'click',
+      $(".cs_video_popup-close, .cs_video_popup-layer").on(
+        "click",
         function (e) {
-          $('.cs_video_popup').removeClass('active');
-          $('html').removeClass('overflow-hidden');
-          $('.cs_video_popup-container iframe').attr('src', 'about:blank');
+          $(".cs_video_popup").removeClass("active");
+          $("html").removeClass("overflow-hidden");
+          $(".cs_video_popup-container iframe").attr("src", "about:blank");
           e.preventDefault();
-        },
+        }
       );
     }
   }
@@ -266,24 +266,24 @@
     7. Accordian
   --------------------------------------------------------------*/
   function accordian() {
-    $('.cs_accordian').children('.cs_accordian_body').hide();
-    $('.cs_accordian.active').children('.cs_accordian_body').show();
-    $('.cs_accordian_head').on('click', function () {
+    $(".cs_accordian").children(".cs_accordian_body").hide();
+    $(".cs_accordian.active").children(".cs_accordian_body").show();
+    $(".cs_accordian_head").on("click", function () {
       $(this)
-        .parent('.cs_accordian')
+        .parent(".cs_accordian")
         .siblings()
-        .children('.cs_accordian_body')
+        .children(".cs_accordian_body")
         .slideUp(250);
       $(this).siblings().slideDown(250);
       $(this)
         .parent()
         .parent()
         .siblings()
-        .find('.cs_accordian_body')
+        .find(".cs_accordian_body")
         .slideUp(250);
       /* Accordian Active Class */
-      $(this).parents('.cs_accordian').addClass('active');
-      $(this).parent('.cs_accordian').siblings().removeClass('active');
+      $(this).parents(".cs_accordian").addClass("active");
+      $(this).parent(".cs_accordian").siblings().removeClass("active");
     });
   }
 
@@ -291,9 +291,9 @@
     8. Light Gallery
   --------------------------------------------------------------*/
   function lightGallery() {
-    $('.cs_lightgallery').each(function () {
+    $(".cs_lightgallery").each(function () {
       $(this).lightGallery({
-        selector: '.cs_gallery_item',
+        selector: ".cs_gallery_item",
         subHtmlSelectorRelative: false,
         thumbnail: false,
         mousewheel: true,
@@ -305,8 +305,8 @@
     9. Hover To Active
   --------------------------------------------------------------*/
   function hoverActive() {
-    $('.cs_hover_active').hover(function () {
-      $(this).addClass('active').siblings().removeClass('active');
+    $(".cs_hover_active").hover(function () {
+      $(this).addClass("active").siblings().removeClass("active");
     });
   }
 
@@ -314,25 +314,25 @@
     10. Isotop
   --------------------------------------------------------------*/
   function isotopInit() {
-    if ($.exists('.cs_isotop')) {
-      $('.cs_isotop').isotope({
-        itemSelector: '.cs_isotop_item',
-        transitionDuration: '0.60s',
+    if ($.exists(".cs_isotop")) {
+      $(".cs_isotop").isotope({
+        itemSelector: ".cs_isotop_item",
+        transitionDuration: "0.60s",
         percentPosition: true,
         masonry: {
-          columnWidth: '.cs_grid_sizer',
+          columnWidth: ".cs_grid_sizer",
         },
       });
       /* Active Class of Portfolio*/
-      $('.cs_isotop_filter ul li').on('click', function (event) {
-        $(this).siblings('.active').removeClass('active');
-        $(this).addClass('active');
+      $(".cs_isotop_filter ul li").on("click", function (event) {
+        $(this).siblings(".active").removeClass("active");
+        $(this).addClass("active");
         event.preventDefault();
       });
       /*=== Portfolio filtering ===*/
-      $('.cs_isotop_filter ul').on('click', 'a', function () {
-        var filterElement = $(this).attr('data-filter');
-        $('.cs_isotop').isotope({
+      $(".cs_isotop_filter ul").on("click", "a", function () {
+        var filterElement = $(this).attr("data-filter");
+        $(".cs_isotop").isotope({
           filter: filterElement,
         });
       });
@@ -342,11 +342,11 @@
   /*--------------------------------------------------------------
     11. Dynamic contact form
   --------------------------------------------------------------*/
-  if ($.exists('#cs_form')) {
-    const form = document.getElementById('cs_form');
-    const result = document.getElementById('cs_result');
+  if ($.exists("#cs_form")) {
+    const form = document.getElementById("cs_form");
+    const result = document.getElementById("cs_result");
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener("submit", function (e) {
       const formData = new FormData(form);
       e.preventDefault();
       var object = {};
@@ -354,17 +354,17 @@
         object[key] = value;
       });
       var json = JSON.stringify(object);
-      result.innerHTML = 'Please wait...';
+      result.innerHTML = "Please wait...";
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: json,
       })
-        .then(async response => {
+        .then(async (response) => {
           let json = await response.json();
           if (response.status == 200) {
             result.innerHTML = json.message;
@@ -373,33 +373,33 @@
             result.innerHTML = json.message;
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
-          result.innerHTML = 'Something went wrong!';
+          result.innerHTML = "Something went wrong!";
         })
         .then(function () {
           form.reset();
           setTimeout(() => {
-            result.style.display = 'none';
+            result.style.display = "none";
           }, 5000);
         });
     });
   }
 
-   /*--------------------------------------------------------------
+  /*--------------------------------------------------------------
     18. Custom Mouse Pointer
   --------------------------------------------------------------*/
   function customMousePointer() {
-    $('.cs_custom_pointer_wrap').each(function () {
-      $(this).on('mousemove', function (e) {
+    $(".cs_custom_pointer_wrap").each(function () {
+      $(this).on("mousemove", function (e) {
         let mouseX = e.pageX - $(this).offset().left;
         let mouseY = e.pageY - $(this).offset().top;
 
         $(this)
-          .find('.cs_mouse_point')
+          .find(".cs_mouse_point")
           .css({
-            top: mouseY + 'px',
-            left: mouseX + 'px',
+            top: mouseY + "px",
+            left: mouseX + "px",
           });
       });
     });
@@ -411,25 +411,25 @@
   function customSlider() {
     var Slider = (function () {
       var initSlider = function () {
-        $('.cs_custom_slide_arrow_right , .cs_custom_slide_arrow_left').click(
+        $(".cs_custom_slide_arrow_right , .cs_custom_slide_arrow_left").click(
           function (event) {
-            const direction = $(this).hasClass('cs_custom_slide_arrow_left')
-              ? 'prev'
-              : 'next';
+            const direction = $(this).hasClass("cs_custom_slide_arrow_left")
+              ? "prev"
+              : "next";
             updateSlides(direction);
-          },
+          }
         );
-        updateSlides('next');
+        updateSlides("next");
       };
 
       const updateSlides = function (direction) {
-        const activeSlide = $('.cs_custom_slide.active');
-        const slides = $('.cs_custom_slide');
+        const activeSlide = $(".cs_custom_slide.active");
+        const slides = $(".cs_custom_slide");
         const totalSlides = slides.length;
         const activeIndex = activeSlide.index();
         let nextIndex;
 
-        if (direction === 'next') {
+        if (direction === "next") {
           nextIndex = activeIndex === totalSlides - 1 ? 0 : activeIndex + 1;
         } else {
           nextIndex = activeIndex === 0 ? totalSlides - 1 : activeIndex - 1;
@@ -438,10 +438,10 @@
         const nextSlide = slides.eq(nextIndex);
 
         // Remove active class from all slides
-        slides.removeClass('prev-1 next-1 prev-2 next-2 active');
+        slides.removeClass("prev-1 next-1 prev-2 next-2 active");
 
         // Set the new active slide
-        nextSlide.addClass('active');
+        nextSlide.addClass("active");
 
         // Calculate the indices of previous and next slides considering the loop
         const prev1Index = nextIndex === 0 ? totalSlides - 1 : nextIndex - 1;
@@ -450,10 +450,10 @@
         const next2Index = next1Index === totalSlides - 1 ? 0 : next1Index + 1;
 
         // Add appropriate classes to slides
-        slides.eq(prev1Index).addClass('prev-1');
-        slides.eq(prev2Index).addClass('prev-2');
-        slides.eq(next1Index).addClass('next-1');
-        slides.eq(next2Index).addClass('next-2');
+        slides.eq(prev1Index).addClass("prev-1");
+        slides.eq(prev2Index).addClass("prev-2");
+        slides.eq(next1Index).addClass("next-1");
+        slides.eq(next2Index).addClass("next-2");
       };
 
       return {
@@ -466,5 +466,3 @@
     Slider.init();
   }
 })(jQuery); // End of use strict
-
-

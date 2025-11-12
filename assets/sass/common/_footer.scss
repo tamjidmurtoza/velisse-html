@@ -2,45 +2,43 @@
   8. Footer
 ----------------------------------------------------------------*/
 
-.cs_footer_style_1 {
+.cs_footer_address_widget {
   li {
-      &:not(:last-child) {
-        margin-bottom: 37px;
-      }
+    &:not(:last-child) {
+      margin-bottom: 37px;
     }
-    .cs_footer_widget_menu {
-      li {
-        &:not(:last-child) {
-          margin-bottom: 16px;
-        }
-      }
+  }
+}
+.cs_footer_widget_menu {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 16px;
     }
+  }
+  a {
+    color: var(--border-color);
+    &:hover {
+      color: var(--gray-color);
+    }
+  }
 }
 
 .cs_newsletter {
   border-bottom: 0.5px solid var(--border-color);
   padding: 60px 0 70px;
   .cs_newsletter_title {
-    max-width: 700px;
-    width: 100%;
-  }
-  .cs_newsletter_title_font {
-    
-      font-weight: 400;
-      font-size: 96px;
-      line-height: 1.25em;
+    line-height: 1.25em;
   }
   .cs_newsletter_form {
     margin-top: 80px;
 
     .cs_newsletter_input {
-      max-width: 491px;
       width: 100%;
       border: 0;
       outline: 0;
       border-bottom: 0.5px solid var(--border-color);
       padding: 12px 18px 18px 18px;
-
+      flex: 1;
     }
     .cs_newsletter_btn {
       background-color: var(--gray-color);
@@ -48,29 +46,27 @@
     }
   }
 }
-.cs_footer_top {
-  // padding-top: 60px;
-}
-  .cs_main_footer {
-    padding: 60px 0 100px;
-    .cs_footer_widget_text {
-      max-width: 700px;
-      width: 100%;
-      padding-top: 32px;
-    }
-  }
 
-  .cs_nav_widget {
+.cs_main_footer {
+  padding: 60px 0 100px;
+  .cs_footer_widget_text {
     max-width: 700px;
     width: 100%;
-
-    .cs_footer_widget_title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 26px;
-  }   
+    padding-top: 32px;
+  }
 }
-    .cs_copyright {
-      padding: 22px 0;
-    }
-  
+
+.cs_copyright {
+  padding: 22px 0;
+}
+.cs_custom_row_1 {
+  display: flex;
+  gap: 30px 73px;
+  .cs_custom_col_left {
+    width: 567px;
+    flex: none;
+  }
+  .cs_custom_col_right {
+    flex: 1;
+  }
+}

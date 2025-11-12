@@ -53,35 +53,6 @@
 }
 
 .cs_slider_arrows.cs_style_1 {
-  .cs_arrow_wrap_left,
-  .cs_arrow_wrap_right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .cs_left_arrow,
-  .cs_right_arrow {
-    height: 60px;
-    width: 60px;
-    flex: none;
-    background-color: var(--heading-color);
-    transition: all 0.4s ease;
-    color: var(--white-color);
-    @media (max-width: 991px) {
-      width: 50px;
-      height: 50px;
-    }
-
-    &:hover {
-      background-color: var(--heading-color);
-    }
-  }
-  .cs_arrow_wrap_left {
-    left: 0;
-  }
-  .cs_arrow_wrap_right {
-    right: 0;
-  }
 }
 
 .cs_pagination.cs_style_1 {
@@ -144,7 +115,6 @@
     display: flex !important;
   }
 }
-
 
 .cs_slider_indicator {
   max-width: 875px;
