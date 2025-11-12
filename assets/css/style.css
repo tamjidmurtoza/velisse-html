@@ -231,7 +231,8 @@ kbd {
 
 input,
 textarea {
-  color: var(--heading-color);
+  background-color: var(--heading-color);
+  color: var(--border-color);
   transition: all 0.4s ease;
 }
 
@@ -1697,6 +1698,11 @@ label {
   line-height: 1.25em;
 }
 
+.cs_fs_42 {
+  font-size: 42px;
+  line-height: 1.34em;
+}
+
 .cs_fs_48 {
   font-size: 48px;
   line-height: 1.33em;
@@ -1897,6 +1903,13 @@ hr {
   }
 }
 
+.cs_center_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .cs_center {
   display: flex;
   align-items: center;
@@ -1919,6 +1932,10 @@ hr {
   color: var(--gray-color);
 }
 
+.cs_border_color {
+  color: var(--border-color);
+}
+
 .cs_white_bg {
   background-color: var(--white-color);
 }
@@ -1936,67 +1953,73 @@ hr {
 }
 
 /* Start Accordion */
-.cs_accordians.cs_style_1 {
-  margin-left: 60px;
-}
 @media (max-width: 1400px) {
-  .cs_accordians.cs_style_1 {
+  .cs_accordians_style_1 {
     margin-left: 20px;
   }
 }
 @media (max-width: 1199px) {
-  .cs_accordians.cs_style_1 {
+  .cs_accordians_style_1 {
     margin-left: 0px;
   }
 }
-.cs_accordians.cs_style_1 .cs_accordian_title {
+.cs_accordians_style_1 .cs_accordian_title {
   margin-bottom: 0;
   transition: all 0.3s ease;
 }
-.cs_accordians.cs_style_1 .cs_accordian_body {
-  padding: 0 0px 16px 0px;
+.cs_accordians_style_1 .cs_accordian_body {
+  padding-bottom: 30px;
   margin-top: -8px;
 }
-.cs_accordians.cs_style_1 .cs_accordian_body p {
+.cs_accordians_style_1 .cs_accordian_body p {
   margin: 0;
 }
-.cs_accordians.cs_style_1 .cs_accordian_head {
-  padding: 24px 30px 24px 0px;
+.cs_accordians_style_1 .cs_accordian_head {
+  padding: 30px 0px;
   position: relative;
   cursor: pointer;
 }
 @media (max-width: 991px) {
-  .cs_accordians.cs_style_1 .cs_accordian_head {
+  .cs_accordians_style_1 .cs_accordian_head {
     padding: 15px 25px 15px 0px;
   }
-  .cs_accordians.cs_style_1 .cs_accordian_head svg {
+  .cs_accordians_style_1 .cs_accordian_head svg {
     width: 15px;
   }
 }
-.cs_accordians.cs_style_1 .cs_accordian_head:hover .cs_accordian_title {
+.cs_accordians_style_1 .cs_accordian_head:hover .cs_accordian_title {
   color: var(--heading-color);
 }
-.cs_accordians.cs_style_1 .cs_accordian {
-  border-bottom: 1px solid var(--heading-color);
+.cs_accordians_style_1 .cs_accordian {
+  border-bottom: 0.5px solid var(--border-color);
 }
-.cs_accordians.cs_style_1 .cs_accordian.active .cs_accordian_head {
+.cs_accordians_style_1 .cs_accordian.active .cs_accordian_head {
   pointer-events: none;
 }
-.cs_accordians.cs_style_1 .cs_accordian.active .cs_accordian_toggle {
-  transform: rotate(180deg);
+.cs_accordians_style_1 .cs_accordian.active .cs_accordian_toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg) scale(0);
 }
-.cs_accordians.cs_style_1 .cs_accordian:first-child .cs_accordian_head {
-  padding-top: 0;
-}
-.cs_accordians.cs_style_1 .cs_accordian:first-child .cs_accordian_toggle {
-  top: 8px;
-}
-.cs_accordians.cs_style_1 .cs_accordian_toggle {
+.cs_accordians_style_1 .cs_accordian_toggle {
   display: flex;
-  transition: all 0.3s ease;
   position: absolute;
-  top: 33px;
+  top: 39px;
   right: 0;
+  height: 33px;
+  width: 33px;
+}
+.cs_accordians_style_1 .cs_accordian_toggle::before, .cs_accordians_style_1 .cs_accordian_toggle::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: var(--heading-color);
+  top: 50%;
+  left: 50%;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+.cs_accordians_style_1 .cs_accordian_toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg) scale(1);
 }
 
 .cs_accordian_border {
@@ -2048,7 +2071,7 @@ hr {
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  background-color: var(--heading-color);
+  background-color: currentColor;
   position: absolute;
   top: 13px;
   left: 0;
@@ -2233,6 +2256,14 @@ hr {
     display: flex !important;
   }
 }
+.cs_slider_indicator {
+  max-width: 875px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
 /*--------------------------------------------------------------
   6. Video Modal
 ----------------------------------------------------------------*/
@@ -2790,6 +2821,65 @@ hr {
 /*--------------------------------------------------------------
   8. Footer
 ----------------------------------------------------------------*/
+.cs_footer_style_1 li:not(:last-child) {
+  margin-bottom: 37px;
+}
+.cs_footer_style_1 .cs_footer_widget_menu li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.cs_newsletter {
+  border-bottom: 0.5px solid var(--border-color);
+  padding: 60px 0 70px;
+}
+.cs_newsletter .cs_newsletter_title {
+  max-width: 700px;
+  width: 100%;
+}
+.cs_newsletter .cs_newsletter_title_font {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 1.25em;
+}
+.cs_newsletter .cs_newsletter_form {
+  margin-top: 80px;
+}
+.cs_newsletter .cs_newsletter_form .cs_newsletter_input {
+  max-width: 491px;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 0.5px solid var(--border-color);
+  padding: 12px 18px 18px 18px;
+}
+.cs_newsletter .cs_newsletter_form .cs_newsletter_btn {
+  background-color: var(--gray-color);
+  color: var(--heading-color);
+}
+
+.cs_main_footer {
+  padding: 60px 0 100px;
+}
+.cs_main_footer .cs_footer_widget_text {
+  max-width: 700px;
+  width: 100%;
+  padding-top: 32px;
+}
+
+.cs_nav_widget {
+  max-width: 700px;
+  width: 100%;
+}
+.cs_nav_widget .cs_footer_widget_title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+
+.cs_copyright {
+  padding: 22px 0;
+}
+
 /*--------------------------------------------------------------
   9. Isotope
 ----------------------------------------------------------------*/
@@ -3208,6 +3298,24 @@ hr {
 }
 
 .cs_contact_info_right .cs_btn_style_1 {
-  background-color: var(--white-color);
+  background-color: var(--gray-color);
   color: var(--heading-color);
+}
+
+.cs_post_meta_wrapper {
+  padding: 10px 0;
+}
+
+.cs_meta_title {
+  padding-bottom: 18px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cs_button_style_2 {
+  font-size: 16px;
+  color: var(--heading-color);
+}
+.cs_button_style_2 span {
+  border-bottom: 1px solid var(--heading-color);
 }

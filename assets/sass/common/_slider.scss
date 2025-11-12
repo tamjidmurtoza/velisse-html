@@ -144,3 +144,12 @@
     display: flex !important;
   }
 }
+
+
+.cs_slider_indicator {
+  max-width: 875px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
