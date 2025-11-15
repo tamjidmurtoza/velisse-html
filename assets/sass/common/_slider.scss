@@ -128,8 +128,38 @@
 // slider number
 
 .cs_slider_number {
-  .cs_current_number, .cs_slider_number_seperator {
+  .cs_current_number,
+  .cs_slider_number_seperator {
     color: var(--gray-color);
     font-size: 42px;
+  }
+  > span[data-number]:before {
+    content: "0" attr(data-number);
+  }
+  > span {
+    &:before {
+      content: attr(data-number);
+      display: none;
+    }
+    > span {
+      display: block;
+    }
+  }
+
+  [data-number="1"],
+  [data-number="2"],
+  [data-number="3"],
+  [data-number="4"],
+  [data-number="5"],
+  [data-number="6"],
+  [data-number="7"],
+  [data-number="8"],
+  [data-number="9"] {
+    &::before {
+      display: block;
+    }
+    > span {
+      display: none;
+    }
   }
 }

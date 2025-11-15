@@ -2225,9 +2225,42 @@ hr {
   gap: 30px;
 }
 
-.cs_slider_number .cs_current_number, .cs_slider_number .cs_slider_number_seperator {
+.cs_slider_number .cs_current_number,
+.cs_slider_number .cs_slider_number_seperator {
   color: var(--gray-color);
   font-size: 42px;
+}
+.cs_slider_number > span[data-number]:before {
+  content: "0" attr(data-number);
+}
+.cs_slider_number > span:before {
+  content: attr(data-number);
+  display: none;
+}
+.cs_slider_number > span > span {
+  display: block;
+}
+.cs_slider_number [data-number="1"]::before,
+.cs_slider_number [data-number="2"]::before,
+.cs_slider_number [data-number="3"]::before,
+.cs_slider_number [data-number="4"]::before,
+.cs_slider_number [data-number="5"]::before,
+.cs_slider_number [data-number="6"]::before,
+.cs_slider_number [data-number="7"]::before,
+.cs_slider_number [data-number="8"]::before,
+.cs_slider_number [data-number="9"]::before {
+  display: block;
+}
+.cs_slider_number [data-number="1"] > span,
+.cs_slider_number [data-number="2"] > span,
+.cs_slider_number [data-number="3"] > span,
+.cs_slider_number [data-number="4"] > span,
+.cs_slider_number [data-number="5"] > span,
+.cs_slider_number [data-number="6"] > span,
+.cs_slider_number [data-number="7"] > span,
+.cs_slider_number [data-number="8"] > span,
+.cs_slider_number [data-number="9"] > span {
+  display: none;
 }
 
 /*--------------------------------------------------------------
@@ -3287,4 +3320,4 @@ hr {
 }
 .cs_button_style_2 span {
   border-bottom: 1px solid var(--heading-color);
-}
+}/*# sourceMappingURL=style.css.map */
