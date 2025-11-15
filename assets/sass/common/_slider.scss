@@ -53,6 +53,7 @@
 }
 
 .cs_slider_arrows.cs_style_1 {
+  gap: 30px;
 }
 
 .cs_pagination.cs_style_1 {
@@ -122,4 +123,13 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+}
+
+// slider number
+
+.cs_slider_number {
+  .cs_current_number, .cs_slider_number_seperator {
+    color: var(--gray-color);
+    font-size: 42px;
+  }
 }
