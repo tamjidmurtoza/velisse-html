@@ -1,17 +1,27 @@
-.cs_post_meta_wrapper {
-  padding: 10px 0;
-}
-.cs_meta_title {
-  padding-bottom: 18px;
-  font-size: 18px;
-  font-weight: 700;
+.cs_post_card_style_1 {
+  &.cs_blog_card_gap {
+    margin-top: 65%;
+  }
+  .cs_post_meta_wrapper {
+    padding: 10px 0;
+  }
+  .cs_meta_title {
+    padding-bottom: 18px;
+    font-size: 18px;
+    font-weight: 700;
 
-}
-.cs_button_style_2 {
+  }
+  .cs_button_style_2 {
     font-size: 16px;
     color: var(--heading-color);
     
     span {
       border-bottom: 1px solid var(--heading-color);
     }
+  }
+}
+
+ .cs_blog_bottom_text {
+    display: flex;
+    flex-direction: column; 
   }

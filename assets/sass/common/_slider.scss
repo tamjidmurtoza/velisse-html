@@ -55,6 +55,9 @@
 .cs_slider_arrows.cs_style_1 {
   gap: 30px;
 }
+.cs_left_arrow:hover, .cs_right_arrow:hover {
+      color: var(--gray-color);
+    }
 
 .cs_pagination.cs_style_1 {
   display: flex;
@@ -128,6 +131,9 @@
 // slider number
 
 .cs_slider_number {
+  .cs_total_numbers {
+    line-height: 1em;
+  }
   .cs_current_number,
   .cs_slider_number_seperator {
     color: var(--gray-color);

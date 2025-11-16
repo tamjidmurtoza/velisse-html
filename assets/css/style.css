@@ -2163,6 +2163,10 @@ hr {
   gap: 30px;
 }
 
+.cs_left_arrow:hover, .cs_right_arrow:hover {
+  color: var(--gray-color);
+}
+
 .cs_pagination.cs_style_1 {
   display: flex;
   justify-content: center;
@@ -2225,6 +2229,9 @@ hr {
   gap: 30px;
 }
 
+.cs_slider_number .cs_total_numbers {
+  line-height: 1em;
+}
 .cs_slider_number .cs_current_number,
 .cs_slider_number .cs_slider_number_seperator {
   color: var(--gray-color);
@@ -3223,6 +3230,19 @@ hr {
 /*--------------------------------------------------------------
   13. Testimonial
 ----------------------------------------------------------------*/
+.cs_tesmonial_slider {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cs_testimonial_image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
 /*--------------------------------------------------------------
   14. Team
 ----------------------------------------------------------------*/
@@ -3275,14 +3295,17 @@ hr {
   position: absolute;
   bottom: 27px;
   right: 28px;
-  background: var(--white-color);
-  color: var(--heading-color);
   border: 0;
   transform: scale(0);
-  transition: transform 1s ease;
+  transition: all 0.4s ease;
+}
+.cs_project_thumb .cs_btn_style_1 .cs_color_1 {
+  background: var(--white-color);
+  color: var(--heading-color);
 }
 .cs_project_thumb:hover .cs_btn_style_1 {
   transform: scale(1);
+  background-color: rgb(243, 240, 240);
 }
 
 .cs_contact_info_left > ul {
@@ -3304,20 +3327,26 @@ hr {
   color: var(--heading-color);
 }
 
-.cs_post_meta_wrapper {
+.cs_post_card_style_1.cs_blog_card_gap {
+  margin-top: 65%;
+}
+.cs_post_card_style_1 .cs_post_meta_wrapper {
   padding: 10px 0;
 }
-
-.cs_meta_title {
+.cs_post_card_style_1 .cs_meta_title {
   padding-bottom: 18px;
   font-size: 18px;
   font-weight: 700;
 }
-
-.cs_button_style_2 {
+.cs_post_card_style_1 .cs_button_style_2 {
   font-size: 16px;
   color: var(--heading-color);
 }
-.cs_button_style_2 span {
+.cs_post_card_style_1 .cs_button_style_2 span {
   border-bottom: 1px solid var(--heading-color);
-}/*# sourceMappingURL=style.css.map */
+}
+
+.cs_blog_bottom_text {
+  display: flex;
+  flex-direction: column;
+}

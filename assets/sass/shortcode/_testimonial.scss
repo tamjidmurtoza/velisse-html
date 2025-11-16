@@ -1,3 +1,16 @@
 /*--------------------------------------------------------------
   13. Testimonial
 ----------------------------------------------------------------*/
+.cs_tesmonial_slider {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.cs_testimonial_image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
