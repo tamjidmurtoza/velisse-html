@@ -2999,6 +2999,19 @@ hr {
   width: 567px;
   flex: none;
 }
+.cs_custom_row_1 .cs_custom_col_left .cs_footer_address_widget a {
+  color: var(--white-color);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+  transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1), color 0.27s ease-out;
+  background-position: 100% calc(100% - 0px);
+  background-size: 0 2px;
+}
+.cs_custom_row_1 .cs_custom_col_left .cs_footer_address_widget a:hover {
+  opacity: 0.8;
+  background-size: 100% 2px;
+  background-position: 0 calc(100% - 0px);
+}
 .cs_custom_row_1 .cs_custom_col_right {
   flex: 1;
 }
@@ -3341,6 +3354,14 @@ hr {
   min-height: 720px;
 }
 
+.cs_about_banner_style_1 {
+  min-height: 700px;
+}
+
+.cs_cta_wrap {
+  padding: 70px 0px;
+}
+
 /*--------------------------------------------------------------
   13. Testimonial
 ----------------------------------------------------------------*/
@@ -3354,10 +3375,6 @@ hr {
 .cs_testimonial_image {
   height: 100%;
   width: 100%;
-}
-.cs_testimonial_image img {
-  height: inherit;
-  width: inherit;
   object-fit: contain;
 }
 
@@ -3419,18 +3436,38 @@ hr {
 .cs_project_style_1:hover .cs_btn_style_1 {
   transform: scale(1);
 }
-.cs_contact_info_left > ul {
-  gap: 50px;
+.cs_project_style_1 .cs_project_title a {
+  color: var(--heading-color);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+  transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1), color 0.27s ease-out;
+  background-position: 100% calc(100% - 0px);
+  background-size: 0 2px;
 }
-.cs_contact_info_left .cs_contact_info_item > h3 {
-  color: var(--border-color);
+.cs_project_style_1 .cs_project_title a:hover {
+  opacity: 0.8;
+  background-size: 100% 2px;
+  background-position: 0 calc(100% - 0px);
 }
 
-.cs_contact_info_item > a {
-  color: var(--white-color);
+.cs_contact_info_style_1 {
+  gap: 50px;
 }
-.cs_contact_info_item > a:hover {
+.cs_contact_info_style_1 h3 {
+  color: var(--border-color);
+}
+.cs_contact_info_style_1 a {
+  color: var(--white-color);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+  transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1), color 0.27s ease-out;
+  background-position: 100% calc(100% - 0px);
+  background-size: 0 2px;
+}
+.cs_contact_info_style_1 a:hover {
   opacity: 0.8;
+  background-size: 100% 2px;
+  background-position: 0 calc(100% - 0px);
 }
 
 .cs_post_card_style_1.cs_blog_card_gap {
@@ -3444,8 +3481,42 @@ hr {
   font-size: 18px;
   font-weight: 700;
 }
+.cs_post_card_style_1 .cs_meta_title a:hover {
+  opacity: 0.8;
+}
 
 .cs_section_content_1 {
   display: flex;
   flex-direction: column;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.cs_experience_content {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.cs_experience_content:last-child {
+  border-bottom: none;
+}
+
+.cs_experience_content_left {
+  flex: none;
+  width: 39%;
+}
+.cs_experience_content_left .cs_experience_meta {
+  gap: 8px;
+}
+.cs_experience_content_left span {
+  padding-left: 12px;
+  display: block;
+  position: relative;
+}
+.cs_experience_content_left span:before {
+  content: "/";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cs_experience_content_right {
+  flex: 1;
+}

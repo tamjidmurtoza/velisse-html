@@ -65,8 +65,26 @@
   .cs_custom_col_left {
     width: 567px;
     flex: none;
+    .cs_footer_address_widget {
+      a {
+      color: var(--white-color);
+      background-repeat: no-repeat;
+      background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+      transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
+      background-position: 100% calc(100% - 0px);
+      background-size: 0 2px;
+      &:hover {
+        opacity: 0.8;
+        background-size: 100% 2px;
+        background-position: 0 calc(100% - 0px);
+      }
+    }
+
   }
+}
   .cs_custom_col_right {
     flex: 1;
   }
+
 }

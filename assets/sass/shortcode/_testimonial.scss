@@ -11,9 +11,5 @@
 .cs_testimonial_image {
   height: 100%;
   width: 100%;
-  img {
-    height: inherit;
-    width: inherit;
-    object-fit: contain;
-  }
+  object-fit: contain;
 }

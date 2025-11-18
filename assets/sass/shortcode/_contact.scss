@@ -1,17 +1,20 @@
-.cs_contact_info_left {
-  > ul {
-    gap: 50px;
+.cs_contact_info_style_1 {
+  gap: 50px;
+  h3 {
+    color: var(--border-color);
   }
-  .cs_contact_info_item {
-    > h3 {
-      color: var(--border-color);
+  a {
+    color: var(--white-color);
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
+    background-position: 100% calc(100% - 0px);
+    background-size: 0 2px;
+    &:hover {
+      opacity: 0.8;
+      background-size: 100% 2px;
+      background-position: 0 calc(100% - 0px);
     }
-  }
-}
-
-.cs_contact_info_item > a {
-  color: var(--white-color);
-  &:hover {
-    opacity: 0.8;
   }
 }
