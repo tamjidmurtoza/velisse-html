@@ -47,6 +47,10 @@
   font-size: 86px;
   line-height: 1.33em;
 }
+.cs_fs_90 {
+  font-size: 90px;
+  line-height: 1.32em;
+}
 .cs_fs_96 {
   font-size: 96px;
   line-height: 1.33em;
@@ -189,6 +193,14 @@
 
 .cs_gap_y_100 {
   gap: 100px 0;
+}
+.cs_gap_x_64 {
+  margin-left: -32px;
+  margin-right: -32px;
+  > * {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 .cs_gap_x_72 {

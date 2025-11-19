@@ -1,0 +1,22 @@
+.cs_expertise_area {
+  
+  .cs_expertise_title {
+    position: relative;
+    z-index: 11;
+    background: var(
+      --Linear-Black-and-White,
+      linear-gradient(0deg, #222 -36.22%, #f4f4f4 100%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    &:hover {
+      background: var(--heading-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+    }
+  }
+}

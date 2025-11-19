@@ -1,0 +1,12 @@
+.cs_partner_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 250px;
+  .cs_partner {
+    padding: 44px 80px;
+    border-right: 1px solid var(--border-color);
+    &:nth-child(4n) {
+      border-right: none;
+    }
+  }
+}
