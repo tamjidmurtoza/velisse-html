@@ -231,8 +231,6 @@ kbd {
 
 input,
 textarea {
-  background-color: var(--heading-color);
-  color: var(--border-color);
   transition: all 0.4s ease;
 }
 
@@ -1695,7 +1693,7 @@ label {
 
 .cs_fs_32 {
   font-size: 32px;
-  line-height: 1.25em;
+  line-height: 1.31em;
 }
 
 .cs_fs_42 {
@@ -2083,6 +2081,14 @@ hr {
 .cs_btn_style_1.cs_btn_color_1:hover {
   background-color: var(--white-color);
   color: rgba(34, 34, 34, 0.831372549);
+}
+.cs_btn_style_1.cs_btn_color_2 {
+  background-color: var(--heading-color);
+  color: var(--gray-color);
+  border-color: var(--gray-color);
+}
+.cs_btn_style_1.cs_btn_color_2:hover {
+  color: var(--white-color);
 }
 
 .cs_button_style_2 {
@@ -3484,6 +3490,52 @@ hr {
   background-position: 0 calc(100% - 0px);
 }
 
+.cs_contact_form {
+  width: min(100%, 824px);
+  margin-left: auto;
+}
+.cs_contact_form .cs_form_field,
+.cs_contact_form .form_select {
+  display: block;
+  width: 100%;
+  padding: 21px 20px;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  outline: 0;
+  background: transparent;
+  color: var(--border-color);
+}
+.cs_contact_form .cs_form_field:focus,
+.cs_contact_form .form_select:focus {
+  border-color: var(--heading-color);
+}
+.cs_contact_form .cs_btn_style_1 {
+  margin-left: auto;
+}
+
+label {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.social_icon_section {
+  gap: 14px;
+}
+.social_icon_section a {
+  height: 47px;
+  width: 47px;
+  border-radius: 50%;
+  border: 1px solid var(--heading-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--heading-color);
+}
+.social_icon_section a:hover {
+  background-color: var(--heading-color);
+  color: var(--white-color);
+}
+
 .cs_post_card_style_1.cs_blog_card_gap {
   margin-top: 65%;
 }
@@ -3579,17 +3631,30 @@ hr {
   border-right: none;
 }
 
-.cs_award_style_1 .cs_award_title {
+.cs_award_style_1 .cs_award {
+  padding: 30px 40px;
+  border-bottom: 1px solid var(--border-color);
+}
+.cs_award_style_1 .cs_award:last-child {
+  border-bottom: none;
+}
+.cs_award_style_1 .cs_award .cs_award_header {
+  gap: 55px;
+}
+.cs_award_style_1 .cs_award .cs_award_header .cs_award_title {
   flex: none;
   width: 45%;
 }
-.cs_award_style_1 .cs_award_category {
+.cs_award_style_1 .cs_award .cs_award_header .cs_award_category {
   flex: 1;
 }
-.cs_award_style_1 .cs_award_thumb {
+.cs_award_style_1 .cs_award .cs_award_content {
+  gap: 55px;
+}
+.cs_award_style_1 .cs_award .cs_award_content .cs_award_thumb {
   flex: none;
   width: 45%;
 }
-.cs_award_style_1 .cs_award_info {
+.cs_award_style_1 .cs_award .cs_award_content .cs_award_info {
   flex: 1;
-}/*# sourceMappingURL=style.css.map */
+}

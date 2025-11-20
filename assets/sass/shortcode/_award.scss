@@ -1,16 +1,30 @@
 .cs_award_style_1 {
-  .cs_award_title {
-    flex: none;
-    width: 45%;
-  }
-  .cs_award_category {
-    flex: 1;
-  }
-  .cs_award_thumb {
-    flex: none;
-    width: 45%;
-  }
-  .cs_award_info {
-    flex: 1;
+  .cs_award {
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border-color);
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .cs_award_header {
+      gap: 55px;
+      .cs_award_title {
+        flex: none;
+        width: 45%;
+      }
+      .cs_award_category {
+        flex: 1;
+      }
+    }
+    .cs_award_content {
+      gap: 55px;
+      .cs_award_thumb {
+        flex: none;
+        width: 45%;
+      }
+      .cs_award_info {
+        flex: 1;
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 .cs_contact_info_style_1 {
+  
   gap: 50px;
   h3 {
     color: var(--border-color);
@@ -15,6 +16,52 @@
       opacity: 0.8;
       background-size: 100% 2px;
       background-position: 0 calc(100% - 0px);
+    }
+  }
+}
+.cs_contact_form {
+  width: min(100%, 824px);
+  margin-left: auto;
+  .cs_form_field,
+  .form_select {
+    display: block;
+    width: 100%;
+    padding: 21px 20px;
+    border: 0;
+    border-bottom: 1px solid var(--border-color);
+    outline: 0;
+    background: transparent;
+    color: var(--border-color);
+
+    &:focus {
+      border-color: var(--heading-color);
+    }
+  }
+  .cs_btn_style_1 {
+    margin-left: auto;
+  }
+}
+
+label {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.social_icon_section {
+  gap: 14px;
+  a {
+    height: 47px;
+    width: 47px;
+    border-radius: 50%;
+    border: 1px solid var(--heading-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--heading-color);
+
+    &:hover {
+      background-color: var(--heading-color);
+      color: var(--white-color);
     }
   }
 }

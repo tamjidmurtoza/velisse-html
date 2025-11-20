@@ -28,7 +28,7 @@
 }
 .cs_fs_32 {
   font-size: 32px;
-  line-height: 1.25em;
+  line-height: 1.31em;
 }
 .cs_fs_42 {
   font-size: 42px;
@@ -410,6 +410,14 @@ hr {
     &:hover {
       background-color: var(--white-color);
       color: #222222d4;
+    }
+  }
+  &.cs_btn_color_2 {
+    background-color: var(--heading-color);
+    color: var(--gray-color);
+    border-color: var(--gray-color);
+    &:hover {
+      color: var(--white-color);
     }
   }
 }
