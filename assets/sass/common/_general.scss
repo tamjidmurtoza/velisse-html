@@ -25,18 +25,36 @@
 .cs_fs_24 {
   font-size: 24px;
   line-height: 1.33em;
+  @media (max-width: 1400px) {
+    font-size: 22px;
+  }
 }
 .cs_fs_32 {
   font-size: 32px;
   line-height: 1.31em;
+  @media (max-width: 1400px) {
+    font-size: 30px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 26px;
+  }
 }
 .cs_fs_42 {
   font-size: 42px;
   line-height: 1.34em;
+  @media (max-width: 1400px) {
+    font-size: 34px;
+  }
 }
 .cs_fs_48 {
   font-size: 48px;
   line-height: 1.33em;
+  @media (max-width: 1400px) {
+    font-size: 40px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 34px;
+  }
 }
 
 .cs_fs_80 {
@@ -46,6 +64,12 @@
 .cs_fs_86 {
   font-size: 86px;
   line-height: 1.33em;
+  @media (max-width: 1400px) {
+    font-size: 72px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 66px;
+  }
 }
 .cs_fs_90 {
   font-size: 90px;
@@ -54,11 +78,23 @@
 .cs_fs_96 {
   font-size: 96px;
   line-height: 1.33em;
+  @media (max-width: 1400px) {
+    font-size: 80px;
+  }
+  @media (max-width: 1400px) {
+    font-size: 66px;
+  }
 }
 
 .cs_fs_132 {
   font-size: 132px;
   line-height: 1.32em;
+  @media (max-width: 1400px) {
+    font-size: 110px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 90px;
+  }
 }
 
 .cs_light {
@@ -214,9 +250,21 @@
 .cs_gap_x_82 {
   margin-left: -41px;
   margin-right: -41px;
+
   > * {
     padding-left: 41px;
     padding-right: 41px;
+  }
+}
+@media (max-width: 1400px) {
+  .cs_gap_x_82 {
+    margin-left: -25px;
+    margin-right: -25px;
+
+    > * {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
   }
 }
 
@@ -339,10 +387,15 @@ hr {
   .cs_accordian_toggle {
     display: flex;
     position: absolute;
-    top: 39px;
+    top: 50%;
     right: 0;
     height: 33px;
     width: 33px;
+    transform: translateY(-50%);
+    @media (max-width: 1400px) {
+      height: 28px;
+      width: 28px;
+    }
 
     &::before,
     &::after {
@@ -567,15 +620,30 @@ hr {
   display: flex;
   justify-content: space-between;
   gap: 24px;
+  flex-wrap: wrap;
+  @media (max-width: 1400px) {
+    gap: 30px 15px;
+  }
 }
 .cs_custom_row_2 {
   display: flex;
   gap: 82px;
+  @media (max-width: 1400px) {
+    gap: 50px;
+  }
   .cs_custom_col_left {
     flex: none;
     width: 36%;
   }
   .cs_custom_col_right {
     flex: 1;
+  }
+}
+.cs_tabs {
+  .cs_tab {
+    display: none;
+    &.active {
+      display: block;
+    }
   }
 }
