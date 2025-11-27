@@ -8,30 +8,35 @@
   }
 }
 
-
 .cs_service {
   gap: 24px;
   flex-wrap: wrap;
   position: relative;
   z-index: 20;
 
-
-    .cs_service_right {
+  .cs_service_right {
     flex: none;
     width: 100%;
     max-width: 415px;
-    }
+  }
 }
 
 .cs_service_highlight_list {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px 20px;
   list-style: none;
   padding: 0;
+  @media (max-width: 991px) {
+    gap: 10px;
+  }
   li:not(:first-child) {
     position: relative;
     padding-left: 24px;
+    @media (max-width: 991px) {
+      padding-left: 12px;
+    }
     &::before {
       content: "";
       height: 4px;

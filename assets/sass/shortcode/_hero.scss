@@ -9,14 +9,32 @@
 
     .cs_hero_top_left {
       max-width: 563px;
+      @media (max-width: 991px) {
+        max-width: 100%;
+      }
     }
   }
   .cs_hero_bottom {
     display: flex;
     justify-content: space-between;
     gap: 30px 24px;
+    @media (max-width: 991px) {
+      flex-direction: column;
+      .text-end {
+        text-align: left !important;
+      }
+    }
   }
   .cs_hero_bottom_right {
     flex: none;
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+  .cs_hero_card {
+    max-width: 250px;
+    @media (max-width: 991px) {
+      max-width: 100%;
+    }
   }
 }

@@ -10,6 +10,10 @@ html {
   line-height: 1.35em;
   font-weight: 400;
   overflow-x: clip;
+  @media (max-width: 991px) {
+    font-size: 18px;
+    line-height: 1.4em;
+  }
 }
 body {
   overscroll-behavior: none;

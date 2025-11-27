@@ -6,6 +6,9 @@
   li {
     &:not(:last-child) {
       margin-bottom: 37px;
+      @media (max-width: 991px) {
+        margin-bottom: 16px;
+      }
     }
   }
 }
@@ -31,6 +34,9 @@
   }
   .cs_newsletter_form {
     margin-top: 80px;
+    @media (max-width: 1199px) {
+      margin-top: 50px;
+    }
 
     .cs_newsletter_input {
       width: 100%;
@@ -45,19 +51,47 @@
       color: var(--heading-color);
     }
   }
+  .cs_newsletter_thumbnail {
+    height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .cs_main_footer {
   padding: 60px 0 100px;
+  @media (max-width: 991px) {
+    padding: 60px 0 50px;
+  }
   .cs_footer_widget_text {
     max-width: 700px;
     width: 100%;
-    padding-top: 32px;
+    @media (min-width: 992px) {
+      padding-top: 32px;
+    }
+  }
+  .cs_footer_top {
+    @media (max-width: 991px) {
+      img {
+        width: 400px;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_footer_address_widget {
+      padding-bottom: 20px;
+    }
   }
 }
 
 .cs_copyright {
   padding: 22px 0;
+  @media (max-width: 991px) {
+    text-align: center !important;
+  }
 }
 .cs_custom_row_1 {
   display: flex;
@@ -65,15 +99,22 @@
   @media (max-width: 1400px) {
     gap: 30px 50px;
   }
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
   .cs_custom_col_left {
     width: 567px;
+    flex: none;
     @media (max-width: 1400px) {
       width: 520px;
     }
     @media (max-width: 1199px) {
       width: 400px;
     }
-    flex: none;
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+
     .cs_footer_address_widget {
       a {
         color: var(--white-color);
@@ -95,6 +136,7 @@
       }
     }
   }
+
   .cs_custom_col_right {
     flex: 1;
   }
