@@ -52,6 +52,11 @@
     if ($.exists(".wow")) {
       new WOW().init();
     }
+
+    $(".cs_award").hover(function () {
+      $(this).addClass("active");
+      $(this).siblings(".cs_award").removeClass("active");
+    });
   });
 
   $(window).on("scroll", function () {

@@ -1,0 +1,35 @@
+.cs_process_wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 55px;
+  .cs_proces_img {
+    max-width: 40%;
+    flex: none;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      min-height: 570px;
+    }
+  }
+  .cs_process_cards {
+    display: grid;
+    gap: 34px;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+  }
+  .cs_process_card {
+    height: 100%;
+    display: flex;
+    gap: 56px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    bottom: -1px;
+    .cs_process_text {
+      margin-top: auto;
+    }
+  }
+}

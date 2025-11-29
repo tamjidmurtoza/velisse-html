@@ -3804,7 +3804,7 @@ hr {
 }
 
 .cs_cta_wrap {
-  padding: 70px 0px;
+  padding: 70px 0px 100px;
 }
 
 /*--------------------------------------------------------------
@@ -4037,30 +4037,6 @@ hr {
   padding: 10px;
 }
 
-.cs_process_banner {
-  display: flex;
-  justify-content: space-between;
-  gap: 53px;
-}
-.cs_process_banner .cs_banner_img {
-  max-width: 40%;
-  flex: none;
-}
-.cs_process_banner .cs_banner_info .cs_banner_wrapper {
-  display: flex;
-  gap: 34px;
-}
-.cs_process_banner .cs_banner_info .cs_banner_card {
-  height: 100%;
-  display: flex;
-  gap: 56px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid var(--border-color);
-}
-.cs_process_banner .cs_banner_info .cs_banner_card .cs_banner_text {
-  margin-top: auto;
-}
-
 .cs_contact_info_style_1 {
   gap: 50px;
 }
@@ -4232,7 +4208,7 @@ label {
   max-width: 500px;
 }
 
-.cs_value_card {
+.cs_value_card_style_1 {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -4240,7 +4216,7 @@ label {
   padding-bottom: 30px;
   border-bottom: 1px solid var(--border-color);
 }
-.cs_value_card .cs_value_text {
+.cs_value_card_style_1 .cs_value_text {
   margin-top: auto;
 }
 
@@ -4272,30 +4248,74 @@ label {
   border-right: none;
 }
 
-.cs_award_style_1 .cs_award {
+.cs_awards_style_1 .cs_award {
   padding: 30px 40px;
   border-bottom: 1px solid var(--border-color);
 }
-.cs_award_style_1 .cs_award:last-child {
+.cs_awards_style_1 .cs_award:last-child {
   border-bottom: none;
 }
-.cs_award_style_1 .cs_award .cs_award_header {
+.cs_awards_style_1 .cs_award .cs_award_header {
   gap: 55px;
 }
-.cs_award_style_1 .cs_award .cs_award_header .cs_award_title {
+.cs_awards_style_1 .cs_award .cs_award_title {
   flex: none;
-  width: 45%;
+  width: 41%;
 }
-.cs_award_style_1 .cs_award .cs_award_header .cs_award_category {
+.cs_awards_style_1 .cs_award .cs_award_category {
   flex: 1;
 }
-.cs_award_style_1 .cs_award .cs_award_content {
+.cs_awards_style_1 .cs_award .cs_award_content {
+  gap: 55px;
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.8s ease;
+}
+.cs_awards_style_1 .cs_award .cs_award_thumb {
+  flex: none;
+  width: 41%;
+}
+.cs_awards_style_1 .cs_award .cs_award_info {
+  flex: 1;
+}
+.cs_awards_style_1 .cs_award.active .cs_award_content {
+  max-height: 400px;
+  padding-top: 30px;
+}
+
+.cs_process_wrap {
+  display: flex;
+  justify-content: space-between;
   gap: 55px;
 }
-.cs_award_style_1 .cs_award .cs_award_content .cs_award_thumb {
+.cs_process_wrap .cs_proces_img {
+  max-width: 40%;
   flex: none;
-  width: 45%;
 }
-.cs_award_style_1 .cs_award .cs_award_content .cs_award_info {
-  flex: 1;
+.cs_process_wrap .cs_proces_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  min-height: 570px;
+}
+.cs_process_wrap .cs_process_cards {
+  display: grid;
+  gap: 34px;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px;
+}
+.cs_process_wrap .cs_process_card {
+  height: 100%;
+  display: flex;
+  gap: 56px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  bottom: -1px;
+}
+.cs_process_wrap .cs_process_card .cs_process_text {
+  margin-top: auto;
 }/*# sourceMappingURL=style.css.map */
