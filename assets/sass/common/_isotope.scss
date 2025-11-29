@@ -5,14 +5,14 @@
   transition: all 0.4s ease;
 }
 
-.cs_isotop.cs_has_gutter_24 {
-  margin-left: -12px;
-  margin-right: -12px;
-  margin-bottom: -24px;
+.cs_isotop.cs_has_gutter_66 {
+  margin-left: -33px;
+  margin-right: -33px;
+  margin-bottom: -66px;
 
   .cs_isotop_item {
-    padding: 0 12px;
-    margin-bottom: 24px;
+    padding: 0 33px;
+    margin-bottom: 66px;
   }
 }
 
@@ -158,5 +158,53 @@
   .cs_isotop_col_2 .cs_grid_sizer,
   .cs_isotop_col_2 .cs_isotop_item {
     width: 100%;
+  }
+}
+
+.cs_isotop_filter {
+  // margin-bottom: 30px;
+  padding-top: 40px;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--body-color);
+  }
+  li {
+    margin: 0 5px;
+    a {
+      padding: 7px 10px;
+      padding-top: 0;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      font-size: 32px;
+      line-height: 1.3em;
+      display: inline-block;
+      font-weight: 600;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 0%;
+        background-color: var(--body-color);
+        transition: all 0.4s ease;
+      }
+      &:hover {
+        color: var(--heading-color);
+      }
+    }
+    &.active {
+      a {
+        color: var(--heading-color);
+        &:before {
+          width: 100%;
+        }
+      }
+    }
   }
 }

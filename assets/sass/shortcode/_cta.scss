@@ -12,7 +12,16 @@
 }
 .cs_about_banner_style_1 {
   min-height: 700px;
+
+  @media (max-width: 1300px) {
+    min-height: 550px;
+  }
+
+  @media (max-width: 991px) {
+    min-height: 450px;
+  }
 }
+
 .cs_cta_wrap {
   padding: 70px 0px;
 }

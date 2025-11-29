@@ -37,6 +37,10 @@
     @media (max-width: 1199px) {
       margin-top: 50px;
     }
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 10px;
+    }
 
     .cs_newsletter_input {
       width: 100%;
