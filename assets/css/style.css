@@ -3527,48 +3527,25 @@ hr {
   }
 }
 .cs_isotop_filter {
-  padding-top: 40px;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--body-color);
 }
 .cs_isotop_filter ul {
   display: flex;
   align-items: center;
   justify-content: start;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--body-color);
-}
-.cs_isotop_filter li {
-  margin: 0 5px;
+  gap: 5px 50px;
 }
 .cs_isotop_filter li a {
-  padding: 7px 10px;
-  padding-top: 0;
-  border: 1px solid transparent;
-  border-radius: 7px;
-  font-size: 32px;
-  line-height: 1.3em;
   display: inline-block;
-  font-weight: 600;
-  position: relative;
-}
-.cs_isotop_filter li a:before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 2px;
-  width: 0%;
-  background-color: var(--body-color);
-  transition: all 0.4s ease;
 }
 .cs_isotop_filter li a:hover {
   color: var(--heading-color);
 }
 .cs_isotop_filter li.active a {
   color: var(--heading-color);
-}
-.cs_isotop_filter li.active a:before {
-  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -4014,9 +3991,6 @@ hr {
   }
 }
 
-.cs_project_style_2 {
-  gap: 34px;
-}
 .cs_project_style_2 .cs_btn_style_1 {
   position: absolute;
   bottom: 27px;
