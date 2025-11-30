@@ -1,0 +1,28 @@
+.cs_pain_list {
+  li {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  .cs_pain_no {
+    flex: none;
+    width: 12.4%;
+  }
+}
+.cs_project_details {
+  position: relative;
+  .cs_project_info_list {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    .cs_project_info_details {
+      margin-bottom: 0;
+    }
+  }
+}
+.cs_project_card_style_1 {
+  position: relative;
+  max-width: 424px;
+  // height: 466px;
+}

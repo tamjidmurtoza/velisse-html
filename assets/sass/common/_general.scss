@@ -284,6 +284,14 @@
     gap: 50px 0;
   }
 }
+.cs_gap_x_36 {
+  margin-left: -18px;
+  margin-right: -18px;
+  > * {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
 .cs_gap_x_64 {
   margin-left: -32px;
   margin-right: -32px;
