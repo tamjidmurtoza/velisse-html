@@ -768,3 +768,67 @@ hr {
     }
   }
 }
+
+.cs_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 156px 0;
+  .cs_gallery_col {
+    flex: none;
+    width: 50%;
+    &:nth-child(1) {
+      .cs_gallery_item {
+        display: block;
+        max-width: 372px;
+      }
+    }
+    &:nth-child(2) {
+      padding: 20.5% 0 0 6%;
+      .cs_gallery_item {
+        display: block;
+        max-width: 292px;
+      }
+    }
+    &:nth-child(3) {
+      padding-left: 9.6%;
+      .cs_gallery_item {
+        display: block;
+        max-width: 488px;
+      }
+    }
+    &:nth-child(4) {
+      padding-top: 10.275%;
+      padding-left: 13.5%;
+      .cs_gallery_item {
+        display: block;
+        max-width: 488px;
+      }
+    }
+  }
+}
+
+.cs_pagination_box {
+  margin: -5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cs_pagination_box .cs_pagination_item {
+  margin: 5px;
+}
+
+.cs_pagination_item {
+  height: 42px;
+  width: 42px;
+  border-radius: 7px;
+  background-color: var(--gray-color);
+}
+.cs_pagination_item:hover {
+  background-color: var(--heading-color);
+  color: #fff;
+}
+.cs_pagination_item.active {
+  background-color: var(--heading-color);
+  color: #fff;
+  pointer-events: none;
+}

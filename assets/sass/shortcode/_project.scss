@@ -35,6 +35,13 @@
     }
   }
 }
+.cs_project_tabs_style_1_btn {
+  margin-top: -61px;
+  @media (max-width: 991px) {
+    margin-top: 60px;
+    text-align: center;
+  }
+}
 .cs_project_style_1 {
   .cs_btn_style_1 {
     position: absolute;
@@ -79,6 +86,18 @@
     @media (max-width: 991px) {
       max-width: 100%;
     }
+    .cs_project_thumb {
+      img {
+        height: 483px;
+        object-fit: cover;
+        @media (max-width: 1199px) {
+          height: 400px;
+        }
+        @media (max-width: 991px) {
+          height: initial;
+        }
+      }
+    }
   }
   &.cs_type_2 {
     max-width: 473px;
@@ -88,24 +107,50 @@
     @media (max-width: 991px) {
       max-width: 100%;
     }
+    .cs_project_thumb {
+      img {
+        height: 516px;
+        object-fit: cover;
+        @media (max-width: 1199px) {
+          height: 436px;
+        }
+        @media (max-width: 991px) {
+          height: initial;
+        }
+      }
+    }
   }
   &.cs_type_3 {
     max-width: 548px;
     margin-left: auto;
+    margin-top: 290px;
     @media (max-width: 1199px) {
       max-width: 390px;
     }
     @media (max-width: 991px) {
       max-width: 100%;
+      margin-top: 0px;
+    }
+    .cs_project_thumb {
+      img {
+        height: 382px;
+        object-fit: cover;
+        @media (max-width: 1199px) {
+          height: 272px;
+        }
+        @media (max-width: 991px) {
+          height: initial;
+        }
+      }
     }
   }
 }
 .cs_projects_grid {
-  .row .col-lg-6 {
-    &:nth-child(4n + 0) {
-      align-self: end;
-    }
-  }
+  // .row .col-lg-6 {
+  //   &:nth-child(4n + 0) {
+  //     align-self: end;
+  //   }
+  // }
   .cs_tab_links_space {
     height: 550px;
     @media (max-width: 1199px) {
@@ -114,6 +159,12 @@
     @media (max-width: 991px) {
       height: initial;
     }
+  }
+}
+
+@media (max-width: 991px) {
+  .cs_project_style_1.cs_type_3 .cs_project_thumb img {
+    height: 465px;
   }
 }
 .cs_project_style_2 {
