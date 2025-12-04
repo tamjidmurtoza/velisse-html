@@ -1,5 +1,4 @@
 .cs_contact_info_style_1 {
-  
   gap: 50px;
   h3 {
     color: var(--border-color);
@@ -19,24 +18,28 @@
     }
   }
 }
+.cs_form_field {
+  display: block;
+  width: 100%;
+  padding: 20px 20px;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  outline: 0;
+  background: transparent;
+  color: var(--border-color);
+
+  &:focus {
+    border-color: var(--heading-color);
+  }
+}
 .cs_contact_form {
   width: min(100%, 824px);
   margin-left: auto;
-  .cs_form_field,
-  .form_select {
-    display: block;
+  @media (max-width: 991px) {
     width: 100%;
-    padding: 21px 20px;
-    border: 0;
-    border-bottom: 1px solid var(--border-color);
-    outline: 0;
-    background: transparent;
-    color: var(--border-color);
-
-    &:focus {
-      border-color: var(--heading-color);
-    }
+    margin: 0;
   }
+
   .cs_btn_style_1 {
     margin-left: auto;
   }

@@ -64,10 +64,10 @@
 
 .cs_slider_arrows.cs_style_1 {
   gap: 30px;
-}
-.cs_left_arrow:hover,
-.cs_right_arrow:hover {
-  color: var(--gray-color);
+  .cs_left_arrow:hover,
+  .cs_right_arrow:hover {
+    color: var(--gray-color);
+  }
 }
 
 .cs_pagination.cs_style_1 {

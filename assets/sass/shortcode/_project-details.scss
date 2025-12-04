@@ -8,6 +8,7 @@
   .cs_pain_no {
     flex: none;
     width: 12.4%;
+    min-width: 50px;
   }
 }
 .cs_project_info_list {
@@ -19,10 +20,20 @@
 
 .cs_section_heading_style_4 {
   display: flex;
+  align-items: flex-start;
   gap: 20px 40px;
-  text-align: center;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   .cs_section_title {
     padding-top: 60px;
+    @media (max-width: 991px) {
+      padding-top: 0;
+    }
   }
   .cs_project_info {
     width: 100%;

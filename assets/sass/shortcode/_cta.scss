@@ -20,6 +20,10 @@
   @media (max-width: 991px) {
     min-height: 450px;
   }
+
+  @media (max-width: 575px) {
+    min-height: 350px;
+  }
 }
 
 .cs_cta_wrap {

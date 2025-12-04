@@ -90,7 +90,7 @@
   transition: all 0.4s ease;
 }
 .cs_recent_post_title {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 .cs_sidebar_search {
@@ -142,7 +142,7 @@
 }
 .cs_right_sidebar {
   padding-left: 40px;
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     padding-left: 0px;
     padding-top: 60px;
   }

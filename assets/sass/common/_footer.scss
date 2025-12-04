@@ -5,7 +5,7 @@
 .cs_footer_address_widget {
   li {
     &:not(:last-child) {
-      margin-bottom: 37px;
+      margin-bottom: 28px;
       @media (max-width: 991px) {
         margin-bottom: 16px;
       }
@@ -26,6 +26,18 @@
   }
 }
 
+.cs_footer_style_1 {
+  .cs_footer_address_widget {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 37px;
+        @media (max-width: 991px) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
 .cs_newsletter {
   border-bottom: 0.5px solid var(--border-color);
   padding: 60px 0 70px;
@@ -97,6 +109,26 @@
     text-align: center !important;
   }
 }
+.cs_footer_address_widget {
+  a {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
+    background-position: 100% calc(100% - 0px);
+    background-size: 0 2px;
+    &:hover {
+      color: #fff;
+      background-size: 100% 2px;
+      background-position: 0 calc(100% - 0px);
+    }
+    &.cs_heading_color {
+      &:hover {
+        color: var(--heading-color);
+      }
+    }
+  }
+}
 .cs_custom_row_1 {
   display: flex;
   gap: 30px 73px;
@@ -117,27 +149,6 @@
     }
     @media (max-width: 991px) {
       width: 100%;
-    }
-
-    .cs_footer_address_widget {
-      a {
-        color: var(--white-color);
-        background-repeat: no-repeat;
-        background-image: linear-gradient(
-          90deg,
-          currentColor 0,
-          currentColor 100%
-        );
-        transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
-          color 0.27s ease-out;
-        background-position: 100% calc(100% - 0px);
-        background-size: 0 2px;
-        &:hover {
-          opacity: 0.8;
-          background-size: 100% 2px;
-          background-position: 0 calc(100% - 0px);
-        }
-      }
     }
   }
 
