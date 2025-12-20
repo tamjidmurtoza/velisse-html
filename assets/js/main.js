@@ -47,12 +47,12 @@
     lightGallery();
     hoverActive();
     isotopInit();
+    counterInit();
     customMousePointer();
     tabs();
     if ($.exists(".wow")) {
       new WOW().init();
     }
-
     $(".cs_award").hover(function () {
       $(this).addClass("active");
       $(this).siblings(".cs_award").removeClass("active");
@@ -391,7 +391,28 @@
         });
     });
   }
+  /*=====================================================================
+    12. Counter Animation
+=======================================================================*/
+  function counterInit() {
+    if ($.exists(".odometer")) {
+      $(window).on("scroll", function () {
+        function winScrollPosition() {
+          var scrollPos = $(window).scrollTop(),
+            winHeight = $(window).height();
+          var scrollPosition = Math.round(scrollPos + winHeight / 1.2);
+          return scrollPosition;
+        }
 
+        $(".odometer").each(function () {
+          var elemOffset = $(this).offset().top;
+          if (elemOffset < winScrollPosition()) {
+            $(this).html($(this).data("count-to"));
+          }
+        });
+      });
+    }
+  }
   /*--------------------------------------------------------------
     18. Custom Mouse Pointer
   --------------------------------------------------------------*/
@@ -410,7 +431,6 @@
       });
     });
   }
-
   /*--------------------------------------------------------------
     14. Tabs
   --------------------------------------------------------------*/
@@ -425,4 +445,83 @@
       e.preventDefault();
     });
   }
+  /*=============================================
+		=      smooth-wrapper      =
+	=============================================*/
+  if ($("#smooth-wrapper").length && $("#smooth-content").length) {
+    gsap.registerPlugin(
+      ScrollTrigger,
+      ScrollSmoother,
+      TweenMax,
+      ScrollToPlugin
+    );
+
+    gsap.config({
+      nullTargetWarn: false,
+    });
+
+    let smoother = ScrollSmoother.create({
+      smooth: 2,
+      effects: true,
+      smoothTouch: 0.1,
+      normalizeScroll: false,
+      ignoreMobileResize: true,
+    });
+  }
+  /*=============================================
+		=      td-text-invert      =
+	=============================================*/
+  gsap.registerPlugin(ScrollTrigger, TweenMax, ScrollToPlugin);
+
+  const split = new SplitText(".cs_invert_text, .cs_opacity_text", {
+    type: "lines",
+  });
+
+  split.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        scrub: 1,
+        start: "top 85%",
+        end: "bottom center",
+      },
+    });
+  });
+
+  /*=============================================
+		=      td-text-invert      =
+	=============================================*/
+
+  if ($(".cs_fixed_title_wrapper").length > 0) {
+    let project_text = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".cs_fixed_title_wrapper",
+        start: "top center-=250",
+        end: "bottom 70%",
+        pin: ".cs_fixed_title",
+        markers: false,
+        pinSpacing: false,
+        scrub: 1,
+      },
+    });
+  }
+
+  let pc = gsap.matchMedia();
+  pc.add("(min-width: 992px)", () => {
+    if ($(".cs-fixed-thumb-wrapper").length > 0) {
+      let project_text = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".cs-fixed-thumb-wrapper",
+          start: "top center-=350",
+          end: "bottom 65%",
+          pin: ".cs-fixed-thumb",
+          markers: false,
+          pinSpacing: false,
+          scrub: 1,
+        },
+      });
+    }
+  });
 })(jQuery); // End of use strict

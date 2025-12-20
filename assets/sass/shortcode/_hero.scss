@@ -2,39 +2,60 @@
   10. Hero
 ----------------------------------------------------------------*/
 .cs_hero_style_1 {
+  padding: 190px 0 0;
+
   .cs_hero_top {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
-    .cs_hero_top_left {
-      max-width: 563px;
-      @media (max-width: 991px) {
-        max-width: 100%;
-      }
-    }
   }
+
+  .cs_hero_top_left {
+    max-width: 563px;
+  }
+
   .cs_hero_bottom {
     display: flex;
     justify-content: space-between;
     gap: 30px 24px;
-    @media (max-width: 991px) {
+  }
+
+  .cs_hero_bottom_right {
+    flex: none;
+  }
+
+  .cs_hero_card {
+    max-width: 250px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 140px 0 0;
+  }
+
+  @media (max-width: 991px) {
+
+    .cs_hero_card,
+    .cs_hero_top_left {
+      max-width: 100%;
+    }
+
+    .cs_hero_bottom_right {
+      width: 100%;
+    }
+
+    .cs_hero_bottom {
       flex-direction: column;
+
       .text-end {
         text-align: left !important;
       }
     }
   }
-  .cs_hero_bottom_right {
-    flex: none;
-    @media (max-width: 991px) {
-      width: 100%;
-    }
-  }
-  .cs_hero_card {
-    max-width: 250px;
-    @media (max-width: 991px) {
-      max-width: 100%;
-    }
-  }
+}
+
+/*==========================================================
+ Page Heading
+============================================================*/
+.cs_page_heading {
+  padding: 250px 0 0;
 }

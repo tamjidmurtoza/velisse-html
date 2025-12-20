@@ -6,20 +6,24 @@
   li {
     &:not(:last-child) {
       margin-bottom: 28px;
+
       @media (max-width: 991px) {
         margin-bottom: 16px;
       }
     }
   }
 }
+
 .cs_footer_widget_menu {
   li {
     &:not(:last-child) {
       margin-bottom: 16px;
     }
   }
+
   a {
     color: var(--border-color);
+
     &:hover {
       color: var(--gray-color);
     }
@@ -31,6 +35,7 @@
     li {
       &:not(:last-child) {
         margin-bottom: 37px;
+
         @media (max-width: 991px) {
           margin-bottom: 16px;
         }
@@ -38,17 +43,22 @@
     }
   }
 }
+
 .cs_newsletter {
   border-bottom: 0.5px solid var(--border-color);
   padding: 60px 0 70px;
+
   .cs_newsletter_title {
     line-height: 1.25em;
   }
+
   .cs_newsletter_form {
     margin-top: 80px;
+
     @media (max-width: 1199px) {
       margin-top: 50px;
     }
+
     @media (max-width: 400px) {
       flex-direction: column;
       gap: 10px;
@@ -62,13 +72,18 @@
       padding: 12px 18px 18px 18px;
       flex: 1;
     }
+
     .cs_newsletter_btn {
       background-color: var(--gray-color);
       color: var(--heading-color);
     }
   }
+
   .cs_newsletter_thumbnail {
     height: 100%;
+    position: relative;
+    overflow: hidden;
+
     img {
       height: 100%;
       width: 100%;
@@ -79,16 +94,20 @@
 
 .cs_main_footer {
   padding: 60px 0 100px;
+
   @media (max-width: 991px) {
     padding: 60px 0 50px;
   }
+
   .cs_footer_widget_text {
     max-width: 700px;
     width: 100%;
+
     @media (min-width: 992px) {
       padding-top: 32px;
     }
   }
+
   .cs_footer_top {
     @media (max-width: 991px) {
       img {
@@ -96,6 +115,7 @@
       }
     }
   }
+
   @media (max-width: 991px) {
     .cs_footer_address_widget {
       padding-bottom: 20px;
@@ -105,10 +125,12 @@
 
 .cs_copyright {
   padding: 22px 0;
+
   @media (max-width: 991px) {
     text-align: center !important;
   }
 }
+
 .cs_footer_address_widget {
   a {
     background-repeat: no-repeat;
@@ -117,11 +139,13 @@
       color 0.27s ease-out;
     background-position: 100% calc(100% - 0px);
     background-size: 0 2px;
+
     &:hover {
       color: #fff;
       background-size: 100% 2px;
       background-position: 0 calc(100% - 0px);
     }
+
     &.cs_heading_color {
       &:hover {
         color: var(--heading-color);
@@ -129,24 +153,31 @@
     }
   }
 }
+
 .cs_custom_row_1 {
   display: flex;
   gap: 30px 73px;
+
   @media (max-width: 1400px) {
     gap: 30px 50px;
   }
+
   @media (max-width: 991px) {
     flex-direction: column;
   }
+
   .cs_custom_col_left {
     width: 567px;
     flex: none;
+
     @media (max-width: 1400px) {
       width: 520px;
     }
+
     @media (max-width: 1199px) {
       width: 400px;
     }
+
     @media (max-width: 991px) {
       width: 100%;
     }
