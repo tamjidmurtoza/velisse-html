@@ -1,3 +1,6 @@
+/*====================================================
+ 18. Posts
+======================================================*/
 .cs_post_card_style_1 {
   .cs_post_meta_wrapper {
     padding: 10px 0;
@@ -73,7 +76,6 @@
 /*===========================================================
  Post Details Page
 =============================================================*/
-
 .cs_post_details {
   .cs_post_meta {
     margin-bottom: 20px;
@@ -102,7 +104,7 @@
 
   }
 
-  .cs_post_thumb {
+  .cs_post_banner {
     display: block;
     overflow: hidden;
     position: relative;
@@ -116,7 +118,7 @@
   }
 
   article {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     &:last-child {
       margin-bottom: 0;
@@ -124,18 +126,18 @@
   }
 
   h2 {
-    font-size: 46px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 500;
     line-height: 1.2em;
-    font-family: var(--primary-font);
+    font-family: var(--heading-font);
     margin-bottom: 20px;
   }
 
   h3 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2em;
-    font-family: var(--primary-font);
+    font-family: var(--heading-font);
     margin-bottom: 20px;
   }
 
@@ -149,7 +151,7 @@
   }
 
   blockquote {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     line-height: 1.5em;
     border-left: 5px solid var(--heading-color);
@@ -163,7 +165,7 @@
       display: block;
       position: relative;
       color: var(--body-color);
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1.9em;
       font-style: initial;
       font-weight: 500;
@@ -184,8 +186,38 @@
     }
   }
 
-  .embed-responsive {
+  .embed-responsive iframe {
+    width: 100%;
+    min-height: 450px;
     margin-bottom: 35px;
     overflow: hidden;
+  }
+
+  @media (max-width:991px) {
+    article {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    blockquote {
+      font-size: 20px;
+      padding: 30px 15px 30px 15px;
+      margin-bottom: 30px;
+    }
+
+    .embed-responsive iframe {
+      min-height: 350px;
+    }
   }
 }

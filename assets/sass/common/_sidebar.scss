@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-  10. Sidebar
-----------------------------------------------------------------*/
+/*=======================================================
+ 11. Sidebar
+=========================================================*/
 .cs_sidebar_item {
   &:not(:last-child) {
     margin-bottom: 45px;
@@ -8,7 +8,7 @@
 }
 
 .cs_sidebar_widget_title {
-  font-size: 24px;
+  font-size: 30px;
   line-height: 1.33em;
   margin-bottom: 30px;
   border-bottom: 1px solid var(--heading-color);
@@ -21,7 +21,7 @@
   gap: 10px;
 
   .tag-cloud-link {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6em;
     border: 1px solid var(--body-color);
     padding: 5px 15px;
@@ -77,14 +77,23 @@
   align-items: center;
 
   .cs_recent_post_thumb {
+    display: block;
     height: 70px;
     width: 70px;
     flex: none;
     overflow: hidden;
     margin-right: 15px;
 
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
     &:hover {
-      .cs_recent_post_thumb_in {
+      img {
         transform: scale(1.06);
       }
     }
@@ -120,7 +129,7 @@
     border: 0;
     outline: none;
     border-bottom: 1px solid var(--heading-color);
-    padding: 9px 40px 9px 15px;
+    padding: 12px 40px 12px 0;
     transition: all 0.3s ease;
 
     &:focus {
@@ -134,7 +143,7 @@
     outline: none;
     bottom: 0px;
     right: 0;
-    padding: 10px 14px;
+    padding: 12px 14px;
     cursor: pointer;
     background-color: transparent;
     transition: all 0.3s ease;
@@ -150,6 +159,5 @@
 
   @media (max-width: 1199px) {
     padding-left: 0px;
-    padding-top: 60px;
   }
 }

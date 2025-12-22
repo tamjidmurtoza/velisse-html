@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-  9. Isotope
-----------------------------------------------------------------*/
+/*===============================================================
+  10. Isotope
+=================================================================*/
 .cs_isotop {
   transition: all 0.4s ease;
 }
@@ -99,6 +99,7 @@
 }
 
 @media screen and (max-width: 1199px) {
+
   .cs_isotop_col_4 .cs_grid_sizer,
   .cs_isotop_col_4 .cs_isotop_item {
     width: 33.333333%;
@@ -106,6 +107,7 @@
 }
 
 @media screen and (max-width: 991px) {
+
   .cs_isotop_col_4 .cs_grid_sizer,
   .cs_isotop_col_4 .cs_isotop_item {
     width: 50%;
@@ -127,6 +129,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
   .cs_isotop_col_5 .cs_w50,
   .cs_isotop_col_4 .cs_w50,
   .cs_isotop_col_3 .cs_w50,
@@ -165,20 +168,24 @@
   margin-bottom: 60px;
   padding-bottom: 40px;
   border-bottom: 1px solid var(--body-color);
+
   ul {
     display: flex;
     align-items: center;
     justify-content: start;
     flex-wrap: wrap;
-    gap: 5px 50px;
+    gap: 15px 50px;
   }
+
   li {
     a {
       display: inline-block;
+
       &:hover {
         color: var(--heading-color);
       }
     }
+
     &.active {
       a {
         color: var(--heading-color);

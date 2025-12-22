@@ -1,11 +1,6 @@
-.cs_section_heading {
-  .cs_section_tagline {
-    max-width: 500px;
-  }
-  .cs_section_title {
-    max-width: 40%;
-  }
-}
+/*====================================================
+ 20. Value
+======================================================*/
 .cs_value_card_style_1 {
   height: 100%;
   display: flex;
@@ -13,6 +8,7 @@
   gap: 24px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--border-color);
+
   .cs_value_text {
     margin-top: auto;
   }

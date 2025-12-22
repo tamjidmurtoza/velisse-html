@@ -1,7 +1,12 @@
+/*==========================================================
+ 15. Service
+============================================================*/
+
 .cs_service_style_1_list {
-  > li {
+  >li {
     padding: 40px 0;
     border-bottom: 1px solid var(--border-color);
+
     &:last-child {
       border-bottom: none;
     }
@@ -28,15 +33,19 @@
   gap: 10px 20px;
   list-style: none;
   padding: 0;
+
   @media (max-width: 991px) {
     gap: 10px;
   }
+
   li:not(:first-child) {
     position: relative;
     padding-left: 24px;
+
     @media (max-width: 991px) {
       padding-left: 12px;
     }
+
     &::before {
       content: "";
       height: 4px;

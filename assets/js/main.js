@@ -2,32 +2,36 @@
   "use strict";
 
   /*
-  |--------------------------------------------------------------------------
-  | Template Name: LeafLife
-  | Author: Laralink
+  |==============================================
+  | Template Name: Velisse
+  | Author: peterdraw
   | Version: 1.0.0
-  |--------------------------------------------------------------------------
-  |--------------------------------------------------------------------------
+  |==============================================
+  |==============================================
   | TABLE OF CONTENTS:
-  |--------------------------------------------------------------------------
+  |==============================================
   |
-  | 1. Preloader
-  | 2. Mobile Menu
-  | 3. Sticky Header
-  | 4. Dynamic Background
-  | 5. Slick Slider
-  | 6. Modal Video
-  | 7. Accordian
-  | 8. Light Gallery
-  | 9. Hover To Active
-  | 10. Isotop
-  | 11. Dynamic contact form
+  | 01. Preloader
+  | 02. Mobile Menu
+  | 03. Sticky Header
+  | 04. Slick Slider
+  | 05. Accordian
+  | 06. Light Gallery
+  | 07. Isotop
+  | 08. Counter Animation
+  | 09. Custom Mouse Pointer
+  | 10. Tabs
+  | 11. Parallux Image 
+  | 12. Smooth Page Scroll
+  | 13. Invert Text
+  | 14. Dynamic contact form
+  | 15. Scroll Up
   |
   */
 
-  /*--------------------------------------------------------------
+  /*==============================================
     Scripts initialization
-  --------------------------------------------------------------*/
+  ===============================================*/
   $.exists = function (selector) {
     return $(selector).length > 0;
   };
@@ -35,21 +39,22 @@
   $(window).on("load", function () {
     preloader();
     isotopInit();
+    smoothScroll();
+    paralluxInit();
   });
 
   $(function () {
     mainNav();
     stickyHeader();
-    dynamicBackground();
     slickInit();
-    modalVideo();
     accordian();
     lightGallery();
-    hoverActive();
-    isotopInit();
     counterInit();
     customMousePointer();
     tabs();
+    shadowTextInit();
+    dynamicFormSubmission();
+    scrollUp();
     if ($.exists(".wow")) {
       new WOW().init();
     }
@@ -61,19 +66,75 @@
 
   $(window).on("scroll", function () {
     stickyHeader();
+    showScrollUp();
   });
 
-  /*--------------------------------------------------------------
-    1. Preloader
-  --------------------------------------------------------------*/
+  /*==============================================
+    01. Preloader
+  ===============================================*/
   function preloader() {
     $(".cs_preloader").fadeOut();
-    $("cs_preloader_in").delay(150).fadeOut("slow");
-  }
+    $(".cs_preloader_in").delay(150).fadeOut("slow");
+    if (typeof gsap === "undefined") return;
 
-  /*--------------------------------------------------------------
-    2. Mobile Menu
-  --------------------------------------------------------------*/
+    const textEl = document.querySelector(".cs_loading_text");
+    if (!textEl) return;
+
+    if (textEl.classList.contains("is-animated")) return;
+    textEl.classList.add("is-animated");
+
+    // Split text
+    const text = textEl.textContent.trim();
+    textEl.textContent = "";
+
+    text.split("").forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char;
+      span.style.display = "inline-block";
+      textEl.appendChild(span);
+    });
+
+    const letters = textEl.querySelectorAll("span");
+
+    // Timeline (infinite)
+    const tl = gsap.timeline({ repeat: -1 });
+
+    // 🔹 IN: from RIGHT (first → last)
+    tl.fromTo(
+      letters,
+      {
+        x: 40,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.1, // first letter enters first
+        ease: "power3.out",
+        duration: 0.5,
+        delay: 0.5,
+      }
+    )
+
+      // 🔹 OUT: to RIGHT
+      .to(
+        letters,
+        {
+          x: 40,
+          opacity: 0,
+          stagger: {
+            each: 0.1,
+            from: "end", // first letter exits first
+          },
+          ease: "power2.in",
+          duration: 0.5,
+        },
+        "+=0.4"
+      );
+  }
+  /*==============================================
+    02. Mobile Menu
+  ===============================================*/
   function mainNav() {
     $(".cs_nav").append('<span class="cs_menu_toggle"><span></span></span>');
     $(".menu-item-has-children").append(
@@ -97,10 +158,9 @@
       $(".cs_header_form_wrap").removeClass("active");
     });
   }
-
-  /*--------------------------------------------------------------
-    3. Sticky Header
-  --------------------------------------------------------------*/
+  /*==============================================
+    03. Sticky Header
+  ===============================================*/
   function stickyHeader() {
     var scroll = $(window).scrollTop();
     if (scroll >= 10) {
@@ -109,22 +169,9 @@
       $(".cs_sticky_header").removeClass("cs_sticky_active");
     }
   }
-
-  /*--------------------------------------------------------------
-    4. Dynamic Background
-  --------------------------------------------------------------*/
-  function dynamicBackground() {
-    $("[data-src]").each(function () {
-      var src = $(this).attr("data-src");
-      $(this).css({
-        "background-image": "url(" + src + ")",
-      });
-    });
-  }
-
-  /*--------------------------------------------------------------
-    5. Slick Slider
-  --------------------------------------------------------------*/
+  /*==============================================
+    04. Slick Slider
+  ===============================================*/
   function slickInit() {
     if ($.exists(".cs_slider")) {
       $(".cs_slider").each(function () {
@@ -141,7 +188,7 @@
           autoPlayVar = 1;
         }
         // Slide Change Speed
-        var speedVar = parseInt($ts.attr("data-speed"), 10);
+        var speedVar = parseInt($ts.attr("data-speed"), 10) || 600;
         // Slider Loop
         var loopVar = Boolean(parseInt($ts.attr("data-loop"), 10));
         // Slider Center
@@ -226,76 +273,28 @@
       });
     }
   }
-
-  /*--------------------------------------------------------------
-    6. Modal Video
-  --------------------------------------------------------------*/
-  function modalVideo() {
-    if ($.exists(".cs_video_open")) {
-      $("body").append(`
-        <div class="cs_video_popup">
-          <div class="cs_video_popup-overlay"></div>
-          <div class="cs_video_popup-content">
-            <div class="cs_video_popup-layer"></div>
-            <div class="cs_video_popup-container">
-              <div class="cs_video_popup-align">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="about:blank"></iframe>
-                </div>
-              </div>
-              <div class="cs_video_popup-close"></div>
-            </div>
-          </div>
-        </div>
-      `);
-      $(document).on("click", ".cs_video_open", function (e) {
-        e.preventDefault();
-        var video = $(this).attr("href");
-
-        $(".cs_video_popup-container iframe").attr("src", `${video}`);
-
-        $(".cs_video_popup").addClass("active");
-      });
-      $(".cs_video_popup-close, .cs_video_popup-layer").on(
-        "click",
-        function (e) {
-          $(".cs_video_popup").removeClass("active");
-          $("html").removeClass("overflow-hidden");
-          $(".cs_video_popup-container iframe").attr("src", "about:blank");
-          e.preventDefault();
-        }
-      );
-    }
-  }
-
-  /*--------------------------------------------------------------
-    7. Accordian
-  --------------------------------------------------------------*/
+  /*==============================================
+    05. Accordian
+  ================================================*/
   function accordian() {
     $(".cs_accordian").children(".cs_accordian_body").hide();
     $(".cs_accordian.active").children(".cs_accordian_body").show();
     $(".cs_accordian_head").on("click", function () {
-      $(this)
-        .parent(".cs_accordian")
-        .siblings()
-        .children(".cs_accordian_body")
-        .slideUp(250);
-      $(this).siblings().slideDown(250);
-      $(this)
-        .parent()
-        .parent()
-        .siblings()
+      const parent = $(this).closest(".cs_accordian");
+
+      parent
+        .addClass("active")
+        .siblings(".cs_accordian")
+        .removeClass("active")
         .find(".cs_accordian_body")
         .slideUp(250);
-      /* Accordian Active Class */
-      $(this).parents(".cs_accordian").addClass("active");
-      $(this).parent(".cs_accordian").siblings().removeClass("active");
+
+      parent.find(".cs_accordian_body").slideDown(250);
     });
   }
-
-  /*--------------------------------------------------------------
-    8. Light Gallery
-  --------------------------------------------------------------*/
+  /*==============================================
+    06. Light Gallery
+  ===============================================*/
   function lightGallery() {
     $(".cs_lightgallery").each(function () {
       $(this).lightGallery({
@@ -306,19 +305,9 @@
       });
     });
   }
-
-  /*--------------------------------------------------------------
-    9. Hover To Active
-  --------------------------------------------------------------*/
-  function hoverActive() {
-    $(".cs_hover_active").hover(function () {
-      $(this).addClass("active").siblings().removeClass("active");
-    });
-  }
-
-  /*--------------------------------------------------------------
-    10. Isotop
-  --------------------------------------------------------------*/
+  /*==============================================
+    07. Isotop
+  ===============================================*/
   function isotopInit() {
     if ($.exists(".cs_isotop")) {
       $(".cs_isotop").isotope({
@@ -344,78 +333,32 @@
       });
     }
   }
+  /*==============================================
+    08. Counter Animation
+  ==================================================*/
+  function counterInit() {
+    const items = $(".odometer");
+    if (!items.length) return;
 
-  /*--------------------------------------------------------------
-    11. Dynamic contact form
-  --------------------------------------------------------------*/
-  if ($.exists("#cs_form")) {
-    const form = document.getElementById("cs_form");
-    const result = document.getElementById("cs_result");
+    let firedItems = new Set();
 
-    form.addEventListener("submit", function (e) {
-      const formData = new FormData(form);
-      e.preventDefault();
-      var object = {};
-      formData.forEach((value, key) => {
-        object[key] = value;
+    $(window).on("scroll", function () {
+      items.each(function () {
+        if (firedItems.has(this)) return;
+
+        if (
+          $(this).offset().top <
+          $(window).scrollTop() + $(window).height() / 1.2
+        ) {
+          $(this).html($(this).data("count-to"));
+          firedItems.add(this);
+        }
       });
-      var json = JSON.stringify(object);
-      result.innerHTML = "Please wait...";
-
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: json,
-      })
-        .then(async (response) => {
-          let json = await response.json();
-          if (response.status == 200) {
-            result.innerHTML = json.message;
-          } else {
-            console.log(response);
-            result.innerHTML = json.message;
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-          result.innerHTML = "Something went wrong!";
-        })
-        .then(function () {
-          form.reset();
-          setTimeout(() => {
-            result.style.display = "none";
-          }, 5000);
-        });
     });
   }
-  /*=====================================================================
-    12. Counter Animation
-=======================================================================*/
-  function counterInit() {
-    if ($.exists(".odometer")) {
-      $(window).on("scroll", function () {
-        function winScrollPosition() {
-          var scrollPos = $(window).scrollTop(),
-            winHeight = $(window).height();
-          var scrollPosition = Math.round(scrollPos + winHeight / 1.2);
-          return scrollPosition;
-        }
-
-        $(".odometer").each(function () {
-          var elemOffset = $(this).offset().top;
-          if (elemOffset < winScrollPosition()) {
-            $(this).html($(this).data("count-to"));
-          }
-        });
-      });
-    }
-  }
-  /*--------------------------------------------------------------
-    18. Custom Mouse Pointer
-  --------------------------------------------------------------*/
+  /*==============================================
+    09. Custom Mouse Pointer
+  ================================================*/
   function customMousePointer() {
     $(".cs_custom_pointer_wrap").each(function () {
       $(this).on("mousemove", function (e) {
@@ -431,97 +374,204 @@
       });
     });
   }
-  /*--------------------------------------------------------------
-    14. Tabs
-  --------------------------------------------------------------*/
+  /*==============================================
+    10. Tabs
+  ================================================*/
   function tabs() {
     $(".cs_tabs .cs_tab_links a").on("click", function (e) {
+      e.preventDefault();
       var currentAttrValue = $(this).attr("href");
       $(".cs_tabs " + currentAttrValue)
         .fadeIn(400)
         .siblings()
         .hide();
       $(this).parents("li").addClass("active").siblings().removeClass("active");
-      e.preventDefault();
     });
   }
-  /*=============================================
-		=      smooth-wrapper      =
-	=============================================*/
-  if ($("#smooth-wrapper").length && $("#smooth-content").length) {
-    gsap.registerPlugin(
-      ScrollTrigger,
-      ScrollSmoother,
-      TweenMax,
-      ScrollToPlugin
-    );
+  /*==============================================
+		11. Parallux Image 
+	===============================================*/
+  function paralluxInit() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+      return;
+    }
 
-    gsap.config({
-      nullTargetWarn: false,
-    });
+    const items = document.querySelectorAll("[data-parallax]");
+    if (!items.length) return;
 
-    let smoother = ScrollSmoother.create({
-      smooth: 2,
-      effects: true,
-      smoothTouch: 0.1,
-      normalizeScroll: false,
-      ignoreMobileResize: true,
-    });
-  }
-  /*=============================================
-		=      td-text-invert      =
-	=============================================*/
-  gsap.registerPlugin(ScrollTrigger, TweenMax, ScrollToPlugin);
+    items.forEach((el) => {
+      const speed = parseFloat(el.dataset.speed) || 0.6;
 
-  const split = new SplitText(".cs_invert_text, .cs_opacity_text", {
-    type: "lines",
-  });
-
-  split.lines.forEach((target) => {
-    gsap.to(target, {
-      backgroundPositionX: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: target,
-        scrub: 1,
-        start: "top 85%",
-        end: "bottom center",
-      },
-    });
-  });
-
-  /*=============================================
-		=      td-text-invert      =
-	=============================================*/
-
-  if ($(".cs_fixed_title_wrapper").length > 0) {
-    let project_text = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".cs_fixed_title_wrapper",
-        start: "top center-=250",
-        end: "bottom 70%",
-        pin: ".cs_fixed_title",
-        markers: false,
-        pinSpacing: false,
-        scrub: 1,
-      },
-    });
-  }
-
-  let pc = gsap.matchMedia();
-  pc.add("(min-width: 992px)", () => {
-    if ($(".cs-fixed-thumb-wrapper").length > 0) {
-      let project_text = gsap.timeline({
+      gsap.to(el, {
+        yPercent: speed * 100 * -0.6,
+        ease: "none",
         scrollTrigger: {
-          trigger: ".cs-fixed-thumb-wrapper",
-          start: "top center-=350",
-          end: "bottom 65%",
-          pin: ".cs-fixed-thumb",
-          markers: false,
-          pinSpacing: false,
-          scrub: 1,
+          trigger: el,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true,
         },
       });
+    });
+  }
+  /*===============================================
+    12. Smooth Page Scroll
+  =================================================*/
+  function smoothScroll() {
+    if (typeof Lenis === "undefined") return;
+
+    // Reduced motion respect
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Prevent multiple init
+    if (window.lenisInstance) return;
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      smooth: true,
+      smoothTouch: false,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+    });
+
+    window.lenisInstance = lenis;
+
+    // GSAP + ScrollTrigger integration
+
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      lenis.on("scroll", ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
     }
-  });
+  }
+  /*=============================================
+	  13. Invert Text      
+ =============================================*/
+  function shadowTextInit() {
+    // GSAP + plugins check
+    if (
+      typeof gsap === "undefined" ||
+      typeof ScrollTrigger === "undefined" ||
+      typeof SplitText === "undefined"
+    ) {
+      return;
+    }
+
+    const elements = document.querySelectorAll(".cs_invert_text");
+    if (!elements.length) return;
+
+    elements.forEach((el) => {
+      // Avoid duplicate init
+      if (el.classList.contains("is-splitted")) return;
+      el.classList.add("is-splitted");
+
+      // Split text once
+      const split = new SplitText(el, {
+        type: "lines",
+        linesClass: "cs_split_line",
+      });
+
+      // Use GSAP context for auto cleanup
+      gsap.context(() => {
+        split.lines.forEach((line) => {
+          gsap.to(line, {
+            backgroundPositionX: "0%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: line,
+              start: "top 85%",
+              end: "bottom 60%",
+              scrub: 0.6,
+              invalidateOnRefresh: true,
+            },
+          });
+        });
+      }, el);
+    });
+
+    // Refresh once after all splits
+    ScrollTrigger.refresh();
+  }
+  /*==============================================
+    14. Dynamic contact form
+  ===============================================*/
+  function dynamicFormSubmission() {
+    if ($.exists("#cs_form")) {
+      const form = document.getElementById("cs_form");
+      const result = document.getElementById("cs_result");
+
+      form.addEventListener("submit", function (e) {
+        const formData = new FormData(form);
+        e.preventDefault();
+        var object = {};
+        formData.forEach((value, key) => {
+          object[key] = value;
+        });
+        var json = JSON.stringify(object);
+        result.innerHTML = "Please wait...";
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.innerHTML = json.message;
+            } else {
+              console.log(response);
+              result.innerHTML = json.message;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+          })
+          .then(function () {
+            form.reset();
+            setTimeout(() => {
+              result.style.display = "none";
+            }, 5000);
+          });
+      });
+    }
+  }
+  /*=============================================
+   15. Scroll Up
+  ===============================================*/
+  function scrollUp() {
+    $(".cs_scrollup").on("click", function (e) {
+      e.preventDefault();
+      $("html,body").animate(
+        {
+          scrollTop: 0,
+        },
+        0
+      );
+    });
+  }
+
+  /* For Scroll Up */
+  function showScrollUp() {
+    let scroll = $(window).scrollTop();
+    if (scroll >= 350) {
+      $(".cs_scrollup").addClass("active");
+    } else {
+      $(".cs_scrollup").removeClass("active");
+    }
+  }
 })(jQuery); // End of use strict

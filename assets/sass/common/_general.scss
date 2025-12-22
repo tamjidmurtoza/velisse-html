@@ -1,7 +1,6 @@
-/*--------------------------------------------------------------
-  4. General
-----------------------------------------------------------------*/
-
+/*============================================================
+  06. General
+==============================================================*/
 @media (min-width: 1400px) {
   .container {
     max-width: 1364px;
@@ -467,53 +466,53 @@ hr {
 /* Start Accordion */
 .cs_accordians_style_1 {
 
-  // margin-left: 60px;
-  @media (max-width: 1400px) {
-    margin-left: 20px;
-  }
-
-  @media (max-width: 1199px) {
-    margin-left: 0px;
-  }
-
   .cs_accordian_title {
     margin-bottom: 0;
-    transition: all 0.3s ease;
   }
 
   .cs_accordian_body {
-    padding-bottom: 30px;
     margin-top: -8px;
-
-    p {
-      margin: 0;
-    }
+    padding-bottom: 30px;
   }
 
   .cs_accordian_head {
     padding: 30px 0px;
     position: relative;
     cursor: pointer;
+  }
 
-    @media (max-width: 991px) {
-      padding: 15px 25px 15px 0px;
+  .cs_accordian_toggle {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 33px;
+    width: 33px;
+    transform: translateY(-50%);
 
-      svg {
-        width: 15px;
-      }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: var(--heading-color);
+      top: 50%;
+      left: 50%;
+      transition: all 0.3s ease;
+      transform: translate(-50%, -50%);
     }
 
-    &:hover {
-      .cs_accordian_title {
-        color: var(--heading-color);
-      }
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1);
     }
   }
 
   .cs_accordian {
-    border-bottom: 0.5px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 
     &.active {
+
       .cs_accordian_head {
         pointer-events: none;
       }
@@ -526,44 +525,27 @@ hr {
     }
   }
 
-  .cs_accordian_toggle {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    height: 33px;
-    width: 33px;
-    transform: translateY(-50%);
+  @media (max-width: 1400px) {
+    margin-left: 20px;
 
-    @media (max-width: 1400px) {
+    .cs_accordian_toggle {
       height: 28px;
       width: 28px;
     }
+  }
 
-    @media (max-width: 991px) {
+  @media (max-width: 1199px) {
+    margin-left: 0px;
+  }
+
+  @media (max-width: 991px) {
+    .cs_accordian_head {
+      padding: 15px 25px 15px 0px;
+    }
+
+    .cs_accordian_toggle {
       height: 16px;
       width: 16px;
-    }
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      height: 4px;
-      width: 100%;
-      background-color: var(--heading-color);
-      top: 50%;
-      left: 50%;
-      transition: all 0.3s ease;
-      transform: translate(-50%, -50%);
-
-      @media (max-width: 991px) {
-        height: 2px;
-      }
-    }
-
-    &::after {
-      transform: translate(-50%, -50%) rotate(90deg) scale(1);
     }
   }
 }
@@ -657,11 +639,6 @@ hr {
   background-color: transparent;
   transition: all 0.4s ease;
 
-  // @media (max-width: 575px) {
-  //   &:not(.cs_type_1, .cs_type_5, .cs_type_4) {
-  //     width: 100%;
-  //   }
-  // }
   span {
     display: flex;
     overflow: hidden;
@@ -838,6 +815,8 @@ hr {
   }
 }
 
+
+
 .cs_section_heading_style_3 {
   .cs_section_description {
     max-width: 574px;
@@ -870,6 +849,16 @@ hr {
     @media (max-width: 991px) {
       margin-bottom: 20px;
     }
+  }
+}
+
+.cs_section_heading_style_4 {
+  .cs_section_tagline {
+    max-width: 500px;
+  }
+
+  .cs_section_title {
+    max-width: 40%;
   }
 }
 
@@ -1009,4 +998,54 @@ hr {
   background-clip: text;
   -webkit-background-clip: text;
   background-image: linear-gradient(to right, #222 50%, #777 50%);
+}
+
+/*===================================================
+ Scroll Top Button
+=====================================================*/
+.cs_scrollup {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  z-index: 99;
+  transform: translateY(100px);
+  visibility: hidden;
+  border: 2px solid var(--white-color);
+  transition: all 0.3s ease;
+
+  svg {
+    animation: up-arrow 2s linear infinite;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    color: var(--heading-color);
+    border-color: var(--heading-color);
+    background-color: var(--white-color);
+  }
+}
+
+/*===================================================
+ Responsive Tags
+=====================================================*/
+@media (max-width:991px) {
+  br {
+    display: none;
+  }
+}
+
+@keyframes up-arrow {
+  50% {
+    transform: translateY(-2px);
+  }
 }

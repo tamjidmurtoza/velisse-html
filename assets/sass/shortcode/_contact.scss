@@ -1,8 +1,13 @@
+/*=======================================================
+ 17. Contact
+======================================================*/
 .cs_contact_info_style_1 {
   gap: 50px;
+
   h3 {
     color: var(--border-color);
   }
+
   a {
     color: var(--white-color);
     background-repeat: no-repeat;
@@ -11,6 +16,7 @@
       color 0.27s ease-out;
     background-position: 100% calc(100% - 0px);
     background-size: 0 2px;
+
     &:hover {
       opacity: 0.8;
       background-size: 100% 2px;
@@ -18,6 +24,7 @@
     }
   }
 }
+
 .cs_form_field {
   display: block;
   width: 100%;
@@ -32,26 +39,35 @@
     border-color: var(--heading-color);
   }
 }
+
 .cs_contact_form {
   width: min(100%, 824px);
   margin-left: auto;
-  @media (max-width: 991px) {
-    width: 100%;
-    margin: 0;
+
+  label {
+    margin-bottom: 5px;
+    display: inline-block;
   }
 
   .cs_btn_style_1 {
     margin-left: auto;
-  }
-}
 
-label {
-  margin-bottom: 5px;
-  display: inline-block;
+    &:hover {
+      color: var(--heading-color);
+      background-color: transparent;
+      border-color: var(--heading-color);
+    }
+  }
+
+  @media (max-width: 991px) {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .social_icon_section {
   gap: 14px;
+
   a {
     height: 47px;
     width: 47px;

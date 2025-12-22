@@ -1,22 +1,23 @@
-.cs_expertise_area {
-  
+/*====================================================
+ 21. Expertise
+======================================================*/
+.cs_custom_pointer_wrap {
+
   .cs_expertise_title {
     position: relative;
-    z-index: 11;
-    background: var(
-      --Linear-Black-and-White,
-      linear-gradient(0deg, #222 -36.22%, #f4f4f4 100%)
-    );
+    z-index: 1;
+    background:
+      linear-gradient(0deg, #222 -36.22%, #f4f4f4 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+
     &:hover {
       background: var(--heading-color);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      
+      z-index: 11;
     }
   }
 }

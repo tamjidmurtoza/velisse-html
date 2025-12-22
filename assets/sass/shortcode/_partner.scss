@@ -1,11 +1,39 @@
+/*====================================================
+ 22. Partner
+======================================================*/
 .cs_partner_wrapper {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   min-height: 250px;
+
   .cs_partner {
-    padding: 44px 80px;
+    padding: 20px;
     border-right: 1px solid var(--border-color);
+
     &:nth-child(4n) {
+      border-right: none;
+    }
+  }
+
+  @media (max-width:991px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 15px;
+
+    .cs_partner {
+      padding: 20px 10px;
+
+      &:nth-child(2n) {
+        border-right: none;
+      }
+    }
+  }
+
+  @media (max-width:575px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    .cs_partner {
+      padding: 0;
       border-right: none;
     }
   }
