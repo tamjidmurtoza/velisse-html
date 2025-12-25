@@ -15,7 +15,6 @@
     min-height: 560px;
     width: 100%;
     position: relative;
-    overflow: hidden;
 
     img {
       width: 100%;
@@ -33,7 +32,7 @@
     font-style: normal;
   }
 
-  @media (max-width:991px) {
+  @media (max-width: 991px) {
     .cs_testimonial_image {
       min-height: 560px;
     }
@@ -41,9 +40,8 @@
 }
 
 .cs_testimonial_style_1 {
-
-  .cs_invert_text>div {
-    background-image: linear-gradient(to right, #F2F2F2 50%, #AAA 50%);
+  .cs_invert_text > div {
+    background-image: linear-gradient(to right, #f2f2f2 50%, #aaa 50%);
   }
 }
 
@@ -53,6 +51,10 @@
 
   @media (max-width: 991px) {
     flex-direction: column;
+  }
+
+  .cs_testimonial_image {
+    overflow: hidden;
   }
 
   .cs_testimonial_head {
