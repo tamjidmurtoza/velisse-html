@@ -3832,6 +3832,12 @@ hr {
   width: 100%;
   position: relative;
 }
+@media (max-width: 991px) {
+  .cs_testimonial_style_1 .cs_testimonial_image,
+  .cs_testimonial_style_2 .cs_testimonial_image {
+    overflow: hidden;
+  }
+}
 .cs_testimonial_style_1 .cs_testimonial_image img,
 .cs_testimonial_style_2 .cs_testimonial_image img {
   width: 100%;
@@ -3949,6 +3955,11 @@ hr {
   padding: 40px 0;
   border-bottom: 1px solid var(--border-color);
 }
+@media (max-width: 991px) {
+  .cs_service_style_1_list > li {
+    padding: 25px 0;
+  }
+}
 .cs_service_style_1_list > li:last-child {
   border-bottom: none;
 }
@@ -3958,6 +3969,14 @@ hr {
   flex-wrap: wrap;
   position: relative;
   z-index: 20;
+}
+@media (max-width: 991px) {
+  .cs_service {
+    gap: 15px;
+  }
+  .cs_service .cs_mb_25 {
+    margin-bottom: 15px;
+  }
 }
 .cs_service .cs_service_right {
   flex: none;

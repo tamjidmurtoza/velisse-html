@@ -3,9 +3,12 @@
 ============================================================*/
 
 .cs_service_style_1_list {
-  >li {
+  > li {
     padding: 40px 0;
     border-bottom: 1px solid var(--border-color);
+    @media (max-width: 991px) {
+      padding: 25px 0;
+    }
 
     &:last-child {
       border-bottom: none;
@@ -18,6 +21,12 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 20;
+  @media (max-width: 991px) {
+    gap: 15px;
+    .cs_mb_25 {
+      margin-bottom: 15px;
+    }
+  }
 
   .cs_service_right {
     flex: none;
