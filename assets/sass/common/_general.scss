@@ -334,7 +334,7 @@
   margin-left: -18px;
   margin-right: -18px;
 
-  >* {
+  > * {
     padding-left: 18px;
     padding-right: 18px;
   }
@@ -344,7 +344,7 @@
   margin-left: -25px;
   margin-right: -25px;
 
-  >* {
+  > * {
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -354,7 +354,7 @@
   margin-left: -32px;
   margin-right: -32px;
 
-  >* {
+  > * {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -364,7 +364,7 @@
   margin-left: -36px;
   margin-right: -36px;
 
-  >* {
+  > * {
     padding-left: 36px;
     padding-right: 36px;
   }
@@ -374,7 +374,7 @@
   margin-left: -41px;
   margin-right: -41px;
 
-  >* {
+  > * {
     padding-left: 41px;
     padding-right: 41px;
   }
@@ -385,7 +385,7 @@
     margin-left: -25px;
     margin-right: -25px;
 
-    >* {
+    > * {
       padding-left: 25px;
       padding-right: 25px;
     }
@@ -465,7 +465,6 @@ hr {
 
 /* Start Accordion */
 .cs_accordians_style_1 {
-
   .cs_accordian_title {
     margin-bottom: 0;
   }
@@ -512,7 +511,6 @@ hr {
     border-bottom: 1px solid var(--border-color);
 
     &.active {
-
       .cs_accordian_head {
         pointer-events: none;
       }
@@ -567,7 +565,9 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
-    transition: transform ease 0.4s, opacity ease 0.4s;
+    transition:
+      transform ease 0.4s,
+      opacity ease 0.4s;
     pointer-events: none;
   }
 
@@ -587,6 +587,7 @@ hr {
   padding: 16px 40px;
   outline: none;
   border: 1px solid currentColor;
+  position: relative;
 
   @media (max-width: 991px) {
     gap: 8px;
@@ -598,9 +599,41 @@ hr {
     transition: all 0.3s ease;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--heading-color);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property:
+      transform,
+      -webkit-transform;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+  }
+
   &:hover {
+    color: #fff;
     img {
       transform: translateX(5px);
+      position: relative;
+      z-index: 1;
+      filter: brightness(0) invert(1);
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    &::before {
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     }
   }
 
@@ -610,8 +643,9 @@ hr {
     border-color: var(--gray-color);
 
     &:hover {
+      border-color: var(--white-color);
       background-color: var(--white-color);
-      color: #222222d4;
+      color: #fff;
     }
   }
 
@@ -815,8 +849,6 @@ hr {
   }
 }
 
-
-
 .cs_section_heading_style_3 {
   .cs_section_description {
     max-width: 574px;
@@ -981,7 +1013,7 @@ hr {
  GSAP Animation Styling
 ======================================================*/
 
-.cs_invert_text>div {
+.cs_invert_text > div {
   background-size: 200% 100%;
   background-position-x: 100%;
   color: transparent;
@@ -990,8 +1022,7 @@ hr {
   background-image: linear-gradient(to right, #222 50%, #777 50%);
 }
 
-
-.cs_opacity_text>div {
+.cs_opacity_text > div {
   background-size: 200% 100%;
   background-position-x: 100%;
   color: transparent;
@@ -1038,7 +1069,7 @@ hr {
 /*===================================================
  Responsive Tags
 =====================================================*/
-@media (max-width:991px) {
+@media (max-width: 991px) {
   br {
     display: none;
   }

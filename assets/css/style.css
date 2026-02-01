@@ -2213,6 +2213,7 @@ hr {
   padding: 16px 40px;
   outline: none;
   border: 1px solid currentColor;
+  position: relative;
 }
 @media (max-width: 991px) {
   .cs_btn_style_1 {
@@ -2224,8 +2225,39 @@ hr {
 .cs_btn_style_1 img {
   transition: all 0.3s ease;
 }
+.cs_btn_style_1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--heading-color);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+.cs_btn_style_1:hover {
+  color: #fff;
+}
 .cs_btn_style_1:hover img {
   transform: translateX(5px);
+  position: relative;
+  z-index: 1;
+  filter: brightness(0) invert(1);
+}
+.cs_btn_style_1:hover span {
+  position: relative;
+  z-index: 1;
+}
+.cs_btn_style_1:hover::before {
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 .cs_btn_style_1.cs_btn_color_1 {
   background-color: var(--gray-color);
@@ -2233,8 +2265,9 @@ hr {
   border-color: var(--gray-color);
 }
 .cs_btn_style_1.cs_btn_color_1:hover {
+  border-color: var(--white-color);
   background-color: var(--white-color);
-  color: rgba(34, 34, 34, 0.831372549);
+  color: #fff;
 }
 .cs_btn_style_1.cs_btn_color_2 {
   background-color: var(--heading-color);
